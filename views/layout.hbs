@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <title>IronTumblr</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-
-    {{{body}}}
-
-    <script src='/javascripts/script.js'></script>
+    <div class="navbar navbar-default">
+  <a class="btn btn-large" href="/logout">Log out</a>
+  <a class="btn btn-large" href="/login">Log in</a>
+  <a class="btn btn-large" href="/signup">Signup</a>
+</div>
+    <div class="main-container">
+      {{{body}}}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>
