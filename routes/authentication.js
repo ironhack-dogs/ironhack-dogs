@@ -7,8 +7,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 const flash = require("connect-flash");
 
-router.get("/login", ensureLoggedOut(), (req, res) => {
-  console.log(req.flash("error "));
+router.get("/login", ensureLoggedOut(), (req, res, next) => {
   res.render("authentication/login", { message: req.flash("error") });
 });
 
@@ -36,10 +35,10 @@ router.post("/signup", ensureLoggedOut(), (req, res, next) => {
     });
     return;
   }
-  User.findOne({ email }).then(user => {
+  User.findOne({ username }).then(user => {
     if (user !== null) {
       res.render("authentication/signup", {
-        message: "User already exists"
+        message: "Username already exists"
       });
       return;
     }
