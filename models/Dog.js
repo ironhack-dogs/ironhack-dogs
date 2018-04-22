@@ -12,9 +12,15 @@ const DogSchema = Schema({
   color: String,
   hair: String,
   description: String,
-  picture_url: String
-})
+  picture_url: String,
+ {
+  timestamps: {
+    createdAt: "created_at",
+    updatedAt: "updated_at"
+  }
+});
 
-const Dog = mongoose.model("Dog", UserSchema);
+const Dog = mongoose.model("Dog", DogSchema);
 
 module.exports = Dog;
+

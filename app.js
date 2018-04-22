@@ -69,6 +69,12 @@ const index = require("./routes/index");
 app.use("/", index);
 
 const authRoutes = require("./routes/authentication");
-app.use("/", authRoutes)
+app.use("/", authRoutes);
+
+const visitRoutes = require("./routes/dogs");
+app.use("/", visitRoutes)
+
+const adminRoutes = require("./routes/admin");
+app.use("/", adminRoutes)
 
 module.exports = app;
