@@ -46,7 +46,7 @@ router.post("/signup", ensureLoggedOut(), (req, res, next) => {
     const newUser = new User({
       username,
       email,
-      role: 'User'
+      role: 'User',
       telephoneNumber,
       password: hashPass
     });

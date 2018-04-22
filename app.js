@@ -18,7 +18,7 @@ const MongoStore = require("connect-mongo")(session);
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/madridadopta')
+  .connect(process.env.DBURL)
   .then(() => {
     console.log("Connected to Mongo!");
   })
@@ -72,7 +72,7 @@ const authRoutes = require("./routes/authentication");
 app.use("/", authRoutes);
 
 const visitRoutes = require("./routes/dogs");
-app.use("/", visitRoutes)
+app.use("/", visitRoutes);
 
 const adminRoutes = require("./routes/admin");
 app.use("/", adminRoutes)
