@@ -13,7 +13,7 @@ const UserSchema = Schema(
     isAdmin: { type: Boolean, default: false },
     role: {
       type: String,
-      enum: ["User", "Center", "IT"],
+      enum: ["User", "Admin", "Superadmin"],
       default: "User"
     }
   },
