@@ -3,7 +3,7 @@ const router = express.Router();
 const Dog = require("../models/User");
 
 
-router.get("/users", (req, res, next) => {
+router.get("/my-profile", (req, res, next) => {
   res.render("users/index", { user: req.user });
 });
 
