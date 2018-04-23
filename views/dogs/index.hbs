@@ -1,1 +1,13 @@
 Soy la lista de mascotas
+
+{{#each dogs}}
+  <div class="card">
+    <div>
+      <img height="90px" class="img-thumbnail" src="{{{this.picture_url}}}">
+    </div>
+    <div>
+      <a href="/dogs/{{this._id}}">{{this.name}}</a>
+    </div>
+  </div>
+
+{{/each}}

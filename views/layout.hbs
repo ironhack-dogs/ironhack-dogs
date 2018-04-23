@@ -8,21 +8,29 @@
   </head>
   <body>
     <div class="navbar navbar-default">
-  <a class="btn btn-large" href="/logout">Log out</a>
-  <a class="btn btn-large" href="/login">Log in</a>
-  <a class="btn btn-large" href="/signup">Signup</a>
+      
+  <a class="nav-item btn btn-large" href="/logout">Log out</a>
+  <a class="nav-item btn btn-large" href="/login">Log in</a>
+  <a class="nav-item btn btn-large" href="/signup">Signup</a>
+
+  {{#if user}}
+
+  <span class="navbar-text float-right">Hello, {{user.username}}!</span>
+{{/if}}
 </div>
     <div class="main-container">
       {{{body}}}
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <footer>
+
+    <footer>
     <li><a href="/dogs">Mascotas</a></li>
-    <li><a href="/centers">Centros  </a></li>
+    <li><a href="/centers">Centros</a></li>
     <li><a href="/users">Usuarios</a></li>
 
-  </footer>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
   </body>
 
 </html>
