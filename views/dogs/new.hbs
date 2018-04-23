@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="col-md-3">
-    <form action="/dogs/new" method="POST">
+    <form action="/dogs/new" method="POST" enctype="multipart/form-data">
 
       <div class="form-group">
         <label for="dogName">Nombre del perro:</label>
@@ -75,7 +75,7 @@
 
       <div class="form-group">
         <label for="dogName">Sube una foto:</label>
-        <input type="file" class="form-control" id="picture_url" aria-describedby="picture_url">
+        <input type="file" class="form-control" name="picture-url" aria-describedby="picture_url">
         <small class="form-text text-muted">Es importante que subas una fotografía de calidad.</small>
       </div>
 
@@ -89,5 +89,3 @@
   Center name: {{centerData.name}} Center ID: Admin ID: {{centerData.admin_id}}
 
 </div>
-
-<br><br><br><br><br><br>

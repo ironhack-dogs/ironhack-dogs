@@ -14,10 +14,10 @@ cloudinary.config({
 
 var storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  folder: 'lab-upload',
+  folder: 'madrid-adopta',
   allowedFormats: ['jpg', 'png'],
   filename: function (req, file, cb) {
-    cb(null,bcrypt.hashSync(`${Math.floor(Math.random() * 300000)}`, saltRounds) );
+    cb(null, Date.now());
   }
 });
 

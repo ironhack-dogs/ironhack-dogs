@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/Dog");
+const uploadCloud = require("../config/cloudinary.js");
 const Dog = require("../models/Dog");
 const Center = require("../models/Center");
 const moment = require("moment");
@@ -13,7 +13,7 @@ router.get("/new", (req, res, next) => {
   });
 });
 
-router.post("/new", (req, res, next) => {
+router.post("/new", uploadCloud.single("picture-url"), (req, res, next) => {
   const {
     name,
     breed,
@@ -25,6 +25,7 @@ router.post("/new", (req, res, next) => {
     description,
     center
   } = req.body;
+  const picture_url = req.file.url;
   const dog = new Dog({
     name,
     breed,
@@ -34,7 +35,8 @@ router.post("/new", (req, res, next) => {
     color,
     hair,
     description,
-    center
+    center,
+    picture_url
   });
   dog
     .save()
@@ -102,7 +104,7 @@ router.post("/search", (req, res, next) => {
       res.render("dogs/index", { user: req.user, dogs });
     });
   } else {
-    Dog.find({breed, gender, size }).then(dogs => {
+    Dog.find({ breed, gender, size }).then(dogs => {
       console.log(req.user);
       res.render("dogs/index", { user: req.user, dogs });
     });
