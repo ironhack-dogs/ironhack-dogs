@@ -75,6 +75,6 @@ const visitRoutes = require("./routes/dogs");
 app.use("/", visitRoutes);
 
 const adminRoutes = require("./routes/admin");
-app.use("/", adminRoutes)
+app.use("/my-profile", adminRoutes)
 
 module.exports = app;
