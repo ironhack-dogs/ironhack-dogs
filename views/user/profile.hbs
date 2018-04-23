@@ -1,4 +1,15 @@
-  <h2>Hello {{user.username}}!</h2>
+<h2>Hello {{user.username}}!</h2>
+
+{{#if center}}
+
+<p> {{center.name}}</p>
+
+<a href="centers/{{center.id}}"> Edit my center</a>
 
 
-<a href="/my-profile/create-center"> Crea un centro</a>
+{{/if}}
+
+{{#if user.isAdmin}}
+<a href="/my-profile/create-center"> Dar de alta un centro</a>
+
+{{/if}}
