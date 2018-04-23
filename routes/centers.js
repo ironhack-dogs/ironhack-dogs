@@ -21,4 +21,12 @@ router.get("/centers/:id/edit", (req, res, next) => {
   );
 });
 
+router.post("/centers/:id/edit", (req, res, next) => {
+  const { name, phone, email, website_url, description } = req.body;
+  const update = { name, phone, email, website_url, description };
+  Center.findByIdAndUpdate(req.params.id, update)
+  .then(() => res.redirect(`/centers/${req.params.id}`))
+
+})
+
 module.exports = router;
