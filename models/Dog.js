@@ -13,7 +13,8 @@ const DogSchema = Schema(
     color: String,
     hair: String,
     description: String,
-    picture_url: String
+    picture_url: String,
+    permiso:{type:Boolean, default:false}
   },
   {
     timestamps: {
