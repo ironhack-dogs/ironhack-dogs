@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const Center = require("../models/Center");
-const isAdmin = require("../middleware/isAdmin")
+const isAdmin = require("../middleware/isAdmin");
 
 // List all centers
 router.get("/centers", (req, res, next) => {
-  res.render("centers/index", { user: req.user });
+  Center.find().then(centers => res.render("centers/index", { user: req.user, centers }));
 });
 
 // Show one center
@@ -16,8 +16,8 @@ router.get("/centers/:id", (req, res, next) => {
 });
 
 // CRUD Edit Center
-router.get("/centers/:id/edit", isAdmin(), (req, res, next) => {  
-  res.render("centers/edit", { user: req.user, center: req.center })
+router.get("/centers/:id/edit", isAdmin(), (req, res, next) => {
+  res.render("centers/edit", { user: req.user, center: req.center });
 });
 
 router.post("/centers/:id/edit", (req, res, next) => {
