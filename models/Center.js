@@ -7,7 +7,7 @@ const CenterSchema = Schema(
   admin_id: String,
   authorized: {type:Boolean,default:false},
   location: { type: { type: String }, coordinates: [Number] },
-  phone: Number,
+  phone: String,
   email: String,
   website_url: String,
   description: String,
