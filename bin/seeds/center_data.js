@@ -1,31 +1,26 @@
 module.exports = [
   {
-    reference_id: "1",
-    center_id: "1",
-    name: "Toby",
-    breed: "Labrador",
-    gender: "Macho",
-    birthday: "2011-10-10",
-    size: "Mediano",
-    color: "Negro",
-    hair: "Liso",
-    description: "Un buen chico",
-    picture_url: "https://www.pets4homes.co.uk/images/classifieds/2016/08/13/1358640/black-labrador-puppies-57aee90a2afda.jpg"
+    name: "Centro Prueba",
+    admin_id: "",
+    authorized: false,
+    location: { type: "Point", coordinates: [40.37943, -3.732879] },
+    phone: "555555555",
+    email: "centroprueba@prueba.com",
+    website_url: "https://www.centroprueba.com",
+    description: "Un centro",
+    logo_url: "String",
+    banner_url: "String"
   },
   {
-    reference_id: "2",
-    center_id: "1",
-    name: "Lua",
-    breed: "Yorkshire",
-    gender: "Hembra",
-    birthday:"2011-10-10",
-    size: "Mediano",
-    color: "Marron",
-    hair: "Liso",
-    description: "Muy traviesa",
-    picture_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Imageyorkie.png/220px-Imageyorkie.png"
+    name: "Centro Prueba Autorizado",
+    admin_id: "",
+    authorized: true,
+    location: { type: "Point", coordinates: [40.34943, -3.762879] },
+    phone: "555555556",
+    email: "centroprueba2@prueba.com",
+    website_url: "https://www.centropruebados.com",
+    description: "Un centro",
+    logo_url: "String",
+    banner_url: "String"
   }
-
-
-
-]
+];

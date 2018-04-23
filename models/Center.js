@@ -13,7 +13,6 @@ const CenterSchema = Schema(
   description: String,
   logo_url: String,
   banner_url: String,
-  role: {type:String,enum:['User','Admin','Superadmin'],default:'User'}
   },                             
   {timestamps: {
     createdAt: "created_at",
