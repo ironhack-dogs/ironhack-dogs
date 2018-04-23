@@ -21,7 +21,7 @@
   <div class="row">
     {{#each dogs}}
     <div class="col-md-4">
-    <h4>{{name}}</h4>
+    <a href="/dogs/{{_id}}"><h4>{{name}}</h4></a>
     <img src="{{picture_url}}" width="200"> 
     </div>
     {{/each}}

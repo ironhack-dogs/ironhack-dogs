@@ -1,5 +1,6 @@
 <p>Soy el perfil de {{dogData.name}}</p>
 
+
 <img height="120" src="{{dogData.picture_url}}">
 <ul>
   <li>Raza: {{dogData.breed}}</li>
@@ -9,4 +10,5 @@
   <li>{{dogData.description}}</li>
 </ul>
 
+<a href="/dogs/edit/{{dogData._id}}"><span class="btn btn-primary">Edit</span></a> <br>
 <a href="/dogs/">< Volver </a>
