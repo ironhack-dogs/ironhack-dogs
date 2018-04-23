@@ -10,4 +10,7 @@ router.get("/centers/:id", (req, res, next) => {
   res.render("centers/profile", { user: req.user });
 });
 
+// router.get("/centers/:id/edit", "middleware", (req, res, next) => {
+//   res.render("centers/profile", { user: req.user });
+// });
 module.exports = router;

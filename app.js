@@ -71,8 +71,8 @@ app.use("/", index);
 const authRoutes = require("./routes/authentication");
 app.use("/", authRoutes);
 
-const userRoutes = require("./routes/users");
-app.use("/", userRoutes);
+const userRoutes = require("./routes/user");
+app.use("/my-profile", userRoutes);
 
 const dogRoutes = require("./routes/dogs");
 app.use("/", dogRoutes);
@@ -80,7 +80,5 @@ app.use("/", dogRoutes);
 const centerRoutes = require("./routes/centers");
 app.use("/", centerRoutes);
 
-const adminRoutes = require("./routes/admin");
-app.use("/my-profile", adminRoutes)
 
 module.exports = app;
