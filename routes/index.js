@@ -13,3 +13,8 @@ router.get("/", (req, res, next) => {
 });
 
 module.exports = router;
+
+
+router.get("/no-permission", (req, res, next) => {
+  res.render("no-permission", {user: req.user})
+});
