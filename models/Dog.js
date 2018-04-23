@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const DogSchema = Schema(
   {
     reference_id: Number,
-    center_id: String,
+    center: [ { type : Schema.Types.ObjectId, ref: 'Center' } ],
     name: String,
     breed: String,
     gender: { type: String, enum: ["Macho", "Hembra"] },

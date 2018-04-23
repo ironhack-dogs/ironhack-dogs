@@ -1,7 +1,7 @@
 module.exports = [
   {
     reference_id: "1",
-    center_id: "1",
+    center: "5addb2588cc03f34689efd87",
     name: "Toby",
     breed: "Labrador",
     gender: "Macho",
@@ -14,7 +14,7 @@ module.exports = [
   },
   {
     reference_id: "2",
-    center_id: "1",
+    center:"5addb2588cc03f34689efd87",
     name: "Lua",
     breed: "Yorkshire",
     gender: "Hembra",
