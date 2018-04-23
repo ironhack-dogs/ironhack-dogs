@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{Title}}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-  </head>
-  <body>
-    <div class="navbar navbar-default">
-      
-  <a class="nav-item btn btn-large" href="/logout">Log out</a>
-  <a class="nav-item btn btn-large" href="/login">Log in</a>
-  <a class="nav-item btn btn-large" href="/signup">Signup</a>
 
-  {{#if user}}
+<head>
+  <meta charset="utf-8">
+  <title>{{Title}}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
 
-  <span class="navbar-text float-right">Hello, {{user.username}}!</span>
-{{/if}}
-</div>
-    <div class="main-container">
-      {{{body}}}
-    </div>
+<body>
+  <div class="navbar navbar-default">
+    {{#if user}}
+    <a class="nav-item btn btn-large" href="/logout">Log out</a>
+    <a class="nav-item btn btn-large" href="/my-profile">Go to my profile</a>
+    <span class="navbar-text float-right">Hello, {{user.username}}!</span>
+    {{else}}
+    <a class="nav-item btn btn-large" href="/login">Log in</a>
+    <a class="nav-item btn btn-large" href="/signup">Signup</a>
+    {{/if}}
+  </div>
+  <div class="main-container">
+    {{{body}}}
+  </div>
 
-    <footer>
-    <li><a href="/dogs">Mascotas</a></li>
-    <li><a href="/centers">Centros</a></li>
-    <li><a href="/users">Usuarios</a></li>
+  <footer>
+    <li>
+      <a href="/dogs">Mascotas</a>
+    </li>
+    <li>
+      <a href="/centers">Centros</a>
+    </li>
+    <li>
+      <a href="/users">Usuarios</a>
+    </li>
 
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-  </body>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
 
 </html>
