@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Center = require("../models/Center");
+const isAdmin = require("../middleware/isAdmin")
 
 // List all centers
 router.get("/centers", (req, res, next) => {
@@ -15,10 +16,9 @@ router.get("/centers/:id", (req, res, next) => {
 });
 
 // CRUD Edit Center
-router.get("/centers/:id/edit", (req, res, next) => {
+router.get("/centers/:id/edit", isAdmin(), (req, res, next) => {  
   Center.findById(req.params.id)
     .then(center => res.render("centers/edit", { user: req.user, center }))
-    .catch(e => next(e));
 });
 
 router.post("/centers/:id/edit", (req, res, next) => {
@@ -30,7 +30,7 @@ router.post("/centers/:id/edit", (req, res, next) => {
 });
 
 //CRUD Delete Center
-router.get("/centers/:id/delete", (req, res, next) => {
+router.get("/centers/:id/delete", isAdmin(), (req, res, next) => {
   Center.findByIdAndRemove(req.params.id)
     .then(() => res.redirect("/my-profile"))
     .catch(e => next(e));

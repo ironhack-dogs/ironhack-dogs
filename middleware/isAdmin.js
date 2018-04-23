@@ -1,9 +1,15 @@
+const Center = require("../models/Center");
+
 const isAdmin = (redirectTo) => (req, res, next) => {
-  if( req.user && req.user.role === "Admin") {
-    next();
-  } else {
-    res.redirect(redirectTo);
-  }
+  Center.findById(req.params.id)
+  .then((center) => {
+    if (center.admin_id === req.user.id) {
+      next()
+    } else {
+      res.redirect("/no-permission")
+    }
+  })
+  .catch(e => next(e))
 }
 
 module.exports = isAdmin;
