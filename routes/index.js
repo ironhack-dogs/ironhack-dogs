@@ -16,5 +16,5 @@ module.exports = router;
 
 
 router.get("/no-permission", (req, res, next) => {
-  res.render("no-permission")
+  res.render("no-permission", {user: req.user})
 });

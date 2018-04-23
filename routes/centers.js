@@ -17,8 +17,7 @@ router.get("/centers/:id", (req, res, next) => {
 
 // CRUD Edit Center
 router.get("/centers/:id/edit", isAdmin(), (req, res, next) => {  
-  Center.findById(req.params.id)
-    .then(center => res.render("centers/edit", { user: req.user, center }))
+  res.render("centers/edit", { user: req.user, center: req.center })
 });
 
 router.post("/centers/:id/edit", (req, res, next) => {
@@ -31,7 +30,7 @@ router.post("/centers/:id/edit", (req, res, next) => {
 
 //CRUD Delete Center
 router.get("/centers/:id/delete", isAdmin(), (req, res, next) => {
-  Center.findByIdAndRemove(req.params.id)
+  Center.findByIdAndRemove(req.center)
     .then(() => res.redirect("/my-profile"))
     .catch(e => next(e));
 });
