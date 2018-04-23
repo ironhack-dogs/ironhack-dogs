@@ -1,6 +1,12 @@
-Soy el perfil de {{dogData.name}}
+<p>Soy el perfil de {{dogData.name}}</p>
 
-<img src="{{dogData.picture_url}}">
-
+<img height="120" src="{{dogData.picture_url}}">
+<ul>
+  <li>Raza: {{dogData.breed}}</li>
+  <li>Sexo: {{dogData.gender}}</li>
+  <li>Referencia: {{dogData.reference_id}}</li>
+  <li>Centro: {{dogData.center.name}}</li>
+  <li>{{dogData.description}}</li>
+</ul>
 
 <a href="/dogs/">< Volver </a>

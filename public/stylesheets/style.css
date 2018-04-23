@@ -12,10 +12,11 @@ a {
   float: left; }
 
 footer {
+  margin-top: 60px;
   text-align: center;
   background-color: #ececec;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   padding: 20px; }
 

@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <div class="col-md-3">
+    <form action="/dogs/new" method="POST">
+
+      <div class="form-group">
+        <label for="dogName">Nombre del perro:</label>
+        <input type="text" class="form-control" id="name" name="name" aria-describedby="Name">
+      </div>
+
+      <div class="form-group">
+        <label for="breed">Raza:</label>
+        <input type="text" class="form-control" id="breed" name="breed" aria-describedby="Breed">
+      </div>
+
+      <div class="form-group">
+        <label for="gendre">Sexo:</label>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="gender" value="Macho">
+          <label class="form-check-label" for="inlineRadio1">Macho</label>
+
+          <input class="form-check-input" type="radio" name="gender" id="gender" value="Hembra">
+          <label class="form-check-label" for="gender">Hembra</label>
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="dogName">Fecha de nacimiento:</label>
+        <input type="date" class="form-control" id="birthday" name="birthday" aria-describedby="Birthday">
+      </div>
+
+      <div class="form-group">
+        <label for="size">Tamaño:</label>
+        <select type="select" class="form-control" id="size" name="size" aria-describedby="size">
+          <option>Pequeño</option>
+          <option>Mediano</option>
+          <option>Grande</option>
+        </select>
+      </div>
+
+        <div class="form-group">
+          <label for="size">Pelo:</label>
+          <select type="select" class="form-control" id="hair" name="hair" aria-describedby="hair">
+            <option>Corto</option>
+            <option>Medio</option>
+            <option>Largo</option>
+          </select>
+        </div>
+
+
+      <div class="form-group">
+        <label for="color">Color:</label>
+        <input type="text" class="form-control" id="color" name="color" aria-describedby="color">
+      </div>
+      <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea class="form-control" id="description" name="description"> </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="gendre">¿Requiere permiso PPP?</label>
+
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="permiso" value="True">
+          <label class="form-check-label" for="inlineRadio1">Sí</label>
+
+          <input class="form-check-input" type="radio" name="permiso" value="False">
+          <label class="form-check-label" for="gender">No</label>
+        </div>
+        <small id="permisoHelp" class="form-text text-muted">Algunos animales requieren un permiso de Perro Potencialmente Peligroso.</small>
+
+      </div>
+
+      <div class="form-group">
+        <label for="dogName">Sube una foto:</label>
+        <input type="file" class="form-control" id="picture_url" aria-describedby="picture_url">
+        <small class="form-text text-muted">Es importante que subas una fotografía de calidad.</small>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    <input style="visibility:hidden" type="text" name="center" value="{{centerData._id}}">
+    </form>
+  </div>
+
+
+  Center name: {{centerData.name}} Center ID: Admin ID: {{centerData.admin_id}}
+
+</div>
+
+<br><br><br><br><br><br>

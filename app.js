@@ -75,7 +75,7 @@ const userRoutes = require("./routes/user");
 app.use("/my-profile", userRoutes);
 
 const dogRoutes = require("./routes/dogs");
-app.use("/", dogRoutes);
+app.use("/dogs", dogRoutes);
 
 const centerRoutes = require("./routes/centers");
 app.use("/", centerRoutes);

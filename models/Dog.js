@@ -14,7 +14,7 @@ const DogSchema = Schema(
     hair: String,
     description: String,
     picture_url: String,
-    permiso:{type:Boolean, default:false}
+    permiso:{type:String, enum: ["true", "false"],default:"false"}
   },
   {
     timestamps: {
