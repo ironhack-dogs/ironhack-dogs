@@ -35,4 +35,5 @@ router.get("/centers/:id/delete", isAdmin(), (req, res, next) => {
     .catch(e => next(e));
 });
 
+
 module.exports = router;
