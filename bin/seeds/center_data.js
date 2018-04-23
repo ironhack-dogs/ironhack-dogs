@@ -2,7 +2,6 @@ module.exports = [
   {
     name: "Centro Prueba",
     admin_id: "",
-    authorized: false,
     location: { type: "Point", coordinates: [40.37943, -3.732879] },
     phone: "555555555",
     email: "centroprueba@prueba.com",
@@ -14,7 +13,6 @@ module.exports = [
   {
     name: "Centro Prueba Autorizado",
     admin_id: "",
-    authorized: true,
     location: { type: "Point", coordinates: [40.34943, -3.762879] },
     phone: "555555556",
     email: "centroprueba2@prueba.com",

@@ -11,13 +11,15 @@
 <body>
   <div class="navbar navbar-default">
     {{#if user}}
-    <a class="nav-item btn btn-large" href="/logout">Log out</a>
-    <a class="nav-item btn btn-large" href="/my-profile">Go to my profile</a>
+    <a class="nav-item btn btn-large" href="/logout">Cerrar Sesión</a>
+    <a class="nav-item btn btn-large" href="/my-profile">Ir a mi perfil</a>
     <span class="navbar-text float-right">Hello, {{user.username}}!</span>
     {{else}}
-    <a class="nav-item btn btn-large" href="/login">Log in</a>
-    <a class="nav-item btn btn-large" href="/signup">Signup</a>
+    <a class="nav-item btn btn-large" href="/login">Iniciar sesión</a>
+    <a class="nav-item btn btn-large" href="/signup">Registrarme</a>
     {{/if}}
+    <a class="nav-item btn btn-large" href="/dogs">Perros</a>
+    <a class="nav-item btn btn-large" href="/centers">Centros</a>
   </div>
   <div class="main-container">
     {{{body}}}
