@@ -10,16 +10,18 @@
 
 <body>
   <div class="navbar navbar-default">
+    <a class="nav-item navbar-text">MADRID|ADOPTA</a>
+
     {{#if user}}
-    <a class="nav-item btn btn-large" href="/logout">Cerrar Sesión</a>
-    <a class="nav-item btn btn-large" href="/my-profile">Ir a mi perfil</a>
-    <span class="navbar-text float-right">Hello, {{user.username}}!</span>
+    
+    <span class="nav-item navbar-text">Hello, <a href="/my-profile">{{user.username}}</a>!</span>
     {{else}}
-    <a class="nav-item btn btn-large" href="/login">Iniciar sesión</a>
-    <a class="nav-item btn btn-large" href="/signup">Registrarme</a>
+    <a class="nav-item navbar-text" href="/login">Iniciar sesión</a>
+    <a class="nav-item navbar-text" href="/signup">Registrarme</a>
     {{/if}}
-    <a class="nav-item btn btn-large" href="/dogs">Perros</a>
-    <a class="nav-item btn btn-large" href="/centers">Centros</a>
+    <a class="nav-item navbar-text" href="/dogs">Mascotas</a>
+    <a class="nav-item navbar-text" href="/centers">Centros</a>
+    <a class="nav-item navbar-text" href="/logout">Cerrar Sesión</a>
   </div>
   <div class="main-container">
     {{{body}}}
@@ -31,9 +33,6 @@
     </li>
     <li>
       <a href="/centers">Centros</a>
-    </li>
-    <li>
-      <a href="/users">Usuarios</a>
     </li>
 
   </footer>
