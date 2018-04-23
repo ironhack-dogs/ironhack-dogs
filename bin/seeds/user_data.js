@@ -19,7 +19,7 @@ module.exports = [
     surname: "Center",
     picture_url: "fakeurl.jpg",
     isAdmin: true,
-    role: "Center"
+    role: "Admin"
   },
   {
     username: "pruebaIT",
@@ -30,7 +30,7 @@ module.exports = [
     surname: "IT",
     picture_url: "fakeurl.jpg",
     isAdmin: true,
-    role: "IT"
+    role: "Superadmin"
   }
 
 
