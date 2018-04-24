@@ -1,36 +1,56 @@
+@import "variables";
+@import "layout";
+@import "dogs";
+
 body {
   padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: $font-main;
 }
 
 a {
   color: #00B7FF;
 }
 
-.card {
-  height: 260px;
-  width: 200px;
-  box-shadow: 0 1px 3px grey;
-  float:left;
+.background {
+  width:100%;
+  h3 {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.5em;
+  }
+}
+
+.content {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .card {
+    height: 360px;
+    margin: 0;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 1px 3px grey;
+    img {
+      height: 230px;
+      width: 230px;
+      border-radius: 50%;
+    }
+    a{
+      color: $font-main;
+      display: block;
+      font-size: 1.33em;
+      padding: 16px 0 8px;
+    }
+    p {
+      color: black;
+    }
+  }
 }
 
 
-footer {
-  margin-top:60px;
-  text-align: center;
-  background-color:rgb(236, 236, 236);
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  padding: 20px;
-}
 
-footer li {
-  display: inline-block;
-  padding: 0 30px;
-}
 
-#map {
-  height: 400px;
-  width: 100%;
- }

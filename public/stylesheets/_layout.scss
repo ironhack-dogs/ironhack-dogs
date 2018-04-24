@@ -1,0 +1,50 @@
+.navbar {
+  background-color: rgba($color: #000000, $alpha: 0.66);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  .navbar-text {
+    color: $fontwhite;
+    float: right;
+  }
+  img {
+    padding: 5px;
+    height: 50px;
+  }
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  .footer-elements {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    :first-child{
+      float: left;
+    }
+    :last-child{
+      float: right;
+    }
+    img {
+      height: 72px;
+    }
+  }
+}
+
+.protector-top {
+  min-height: 50px;
+  clear: both;
+}
+
+.protector-footer {
+  min-height: 100px;
+}

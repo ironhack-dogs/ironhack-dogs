@@ -9,3 +9,5 @@ npm-debug.log
 
 #ESLINT configuration
 .eslintrc.json
+
+.sass-cache

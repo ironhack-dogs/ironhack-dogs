@@ -1,38 +1,47 @@
-Soy la lista de mascotas {{#each dogs}}
-<div class="card">
-  <div>
-    <img height="90px" class="img-thumbnail" src="{{{this.picture_url}}}">
-  </div>
-  <div>
-    <a href="/dogs/{{this._id}}">{{this.name}}</a>
-  </div>
+<div class="container background" id="welcome">
+  <h2><span>Mascotas</span><br>
+  que te quieren conocer</h2>
 </div>
 
+<div class="container background" id="dog-list">
+  <h3>Los que más te necesitan</h3>
+  <div class="container content" id="each-dog">
+{{#each dogs}}
+<div class="card">
+    <img src="{{{this.picture_url}}}">
+    <a href="/dogs/{{this._id}}">{{this.name}}</a>
+    <p>{{this.gender}} de {{this.birthday}}</p>
+</div>
 {{/each}}
+</div>
+</div>
 
-<form action="/dogs/search" method="POST">
-  <h2>Search for a Dog</h2>
-  <div class="form-group">
-    <label for="breed">Raza:</label>
-    <input type="text" class="form-control" id="breed" name="breed" aria-describedby="Breed">
-  </div>
-  <div class="form-group">
-    <label for="gender">Sexo:</label>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="gender" id="gender" value="Macho">
-      <label class="form-check-label" for="inlineRadio1">Macho</label>
-      <input class="form-check-input" type="radio" name="gender" id="gender" value="Hembra">
-      <label class="form-check-label" for="gender">Hembra</label>
+</div>
+
+<div class="container content" id="dog-search">
+  <form action="/dogs/search" method="POST">
+    <h2>Busca un perro</h2>
+    <div class="form-group">
+      <label for="breed">Raza:</label>
+      <input type="text" class="form-control" id="breed" name="breed" aria-describedby="Breed">
     </div>
-  </div>
-  <div class="form-group">
-    <label for="size">Tamaño:</label>
-    <select type="select" class="form-control" id="size" name="size" aria-describedby="size">
-      <option>Pequeño</option>
-      <option>Mediano</option>
-      <option>Grande</option>
-    </select>
-  </div>
-  
+    <div class="form-group">
+      <label for="gender">Sexo:</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="gender" value="Macho">
+        <label class="form-check-label" for="inlineRadio1">Macho</label>
+        <input class="form-check-input" type="radio" name="gender" id="gender" value="Hembra">
+        <label class="form-check-label" for="gender">Hembra</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="size">Tamaño:</label>
+      <select type="select" class="form-control" id="size" name="size" aria-describedby="size">
+        <option>Pequeño</option>
+        <option>Mediano</option>
+        <option>Grande</option>
+      </select>
+    </div>
+</div> 
   <button type="submit" class="btn btn-primary">Search</button>
 </form>
