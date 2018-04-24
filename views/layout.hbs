@@ -5,39 +5,43 @@
   <meta charset="utf-8">
   <title>{{Title}}</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEJmeY3Pyn91jt-VceT2StgpSovA9jcrs"></script>
   <script src='/javascripts/maps.js'></script>
 </head>
 
 <body>
-  <div class="navbar navbar-default">
-    <img src="/images/Logo.png" class="navbar-brand" alt="MadridAdoptaLogo">
-    <a class="nav-item navbar-text" href="/centers">Centros de Adopción</a>
-    <a class="nav-item navbar-text" href="/dogs">Mascotas</a>
-    {{#if user}}   
-    <a class="nav-item navbar-text" href="/logout">Cerrar Sesión</a> 
-    {{else}}
-    <a class="nav-item navbar-text" href="/login">Iniciar sesión</a>
-    <a class="nav-item navbar-text" href="/signup">Registrarme</a>
-    {{/if}}
-  </div>
-  <div class="protector-top"></div>
-  <div class="main-container">
-    {{{body}}}
-  </div>
-
-
-  <div class="protector-footer"></div>
-  <footer class="container background">
-    <div class="footer-elements">
-      <img src="/images/logo-solo.png" alt="logo">
-      <img src="/images/logo-text.png" alt="text">
+  <nav class="nav">
+    <div class="container">
+      <div>
+        <a href="/"><img height="54px" src="/images/logo-white.png"></a>
+      </div>
+      <div class="link-block">
+        <a href="/centers">Centros de Adopción</a>
+        <a href="/dogs">Mascotas</a>
+        {{#if user}}   
+        <a href="/my-profile">Hola, {{user.username}}!</a>
+        <a  href="/logout">Desconexión  <i class="fas fa-sign-out-alt"></i></a> 
+        {{else}}
+        <a href="/login">Iniciar sesión</a>
+        <a href="/signup">Registrarme</a>
+      </div>
+    {{/if}}  
     </div>
+  </nav>
+
+<div class="main-container">
+    {{{body}}}
+</div>
+
+
+  
+  <footer class="section padding56">
+    Copyright
   </footer>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/locale/es.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

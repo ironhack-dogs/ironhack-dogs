@@ -3,14 +3,28 @@
 @import "dogs";
 
 body {
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 11pt;
   color: $font-main;
+  background-color: #eeeeee;
 }
 
-a {
-  color: #00B7FF;
+.shadow {
+  box-shadow: 0 2px 4px rgba(39, 39, 39, 0.8);
+}
+
+.padding24{
+  padding: 24px 0;
+}
+
+.padding40{
+  padding: 40px 0;
+}
+
+.padding56{
+  padding: 56px 0;
 }
 
 .background {
@@ -22,35 +36,74 @@ a {
   }
 }
 
-.content {
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  .card {
-    height: 360px;
-    margin: 0;
-    width: 360px;
-    text-align: center;
-    box-shadow: 0 1px 3px grey;
-    img {
-      height: 230px;
-      width: 230px;
-      border-radius: 50%;
-    }
-    a{
-      color: $font-main;
-      display: block;
-      font-size: 1.33em;
-      padding: 16px 0 8px;
-    }
-    p {
-      color: black;
-    }
-  }
+
+// TEXT
+
+p {
+  font-size: 11pt;
+  line-height: 16pt;
+}
+
+.hero-title {
+  font-weight: 300;
+  color: white;
+  font-size: 28pt;
+  position: relative;
+  max-width: 300px;
+}
+
+h3 {
+  font-size: 18pt;
+  font-weight: 300;
+  padding: 2px 0;
+}
+
+// BUTTONS
+
+.btn-ghost {
+  padding: 8px 14px;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 10pt;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-primary {
+  padding: 8px 14px;
+  background-color: #FFAD02;
+  border-radius: 30px;
+  font-size: 10pt;
+  color: white;
+  text-decoration: none;
+}
+
+// TABLES
+
+table {
+  margin: 20px 0;
+}
+
+td {
+  padding: 4px;
+  padding-right: 30px;
+}
+
+td:nth-child(odd) {
+  font-weight: 700;
 }
 
 
 
+ 
 
+// IMAGES
+
+.img-round {
+  margin-top: 30px;
+  background-size: cover;
+  height: 230px;
+  width: 230px;
+  border-radius: 50%;
+  border: 5px solid #FFAD02;
+}

@@ -1,47 +1,64 @@
-<div class="container background" id="welcome">
-  <h2><span>Mascotas</span><br>
-  que te quieren conocer</h2>
+<section class="dogs-banner">
+  <div class="dogs-title">
+    Mascotas que te quieren conocer.
+
+  </div>
+</section>
+
+<div class="menu">
+  <form action="/dogs/search" method="POST">
+    <label for="breed">Raza:</label>
+    <input type="text" class="form-control" id="breed" name="breed" aria-describedby="Breed">
+
+
+    <label for="gender">Sexo:</label>
+
+    <input class="form-check-input" type="radio" name="gender" id="gender" value="Macho">
+    <label class="form-check-label" for="inlineRadio1">Macho</label>
+    <input class="form-check-input" type="radio" name="gender" id="gender" value="Hembra">
+    <label class="form-check-label" for="gender">Hembra</label>
+
+
+    <label for="size">Tamaño:</label>
+    <select type="select" class="form-control" id="size" name="size" aria-describedby="size">
+      <option>Pequeño</option>
+      <option>Mediano</option>
+      <option>Grande</option>
+    </select>
+
+    <button type="submit" class="">
+      <i class="fas fa-search"></i> Buscar</button>
+
 </div>
 
-<div class="container background" id="dog-list">
-  <h3>Los que más te necesitan</h3>
-  <div class="container content" id="each-dog">
-{{#each dogs}}
-<div class="card">
-    <img src="{{{this.picture_url}}}">
+<div class="container padding56">
+  {{#each dogs}}
+  <div class="card">
+    <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
     <a href="/dogs/{{this._id}}">{{this.name}}</a>
     <p>{{this.gender}} de {{this.birthday}}</p>
-</div>
-{{/each}}
-</div>
-</div>
-
+  </div>
+  {{/each}}
 </div>
 
-<div class="container content" id="dog-search">
-  <form action="/dogs/search" method="POST">
-    <h2>Busca un perro</h2>
-    <div class="form-group">
-      <label for="breed">Raza:</label>
-      <input type="text" class="form-control" id="breed" name="breed" aria-describedby="Breed">
-    </div>
-    <div class="form-group">
-      <label for="gender">Sexo:</label>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Macho">
-        <label class="form-check-label" for="inlineRadio1">Macho</label>
-        <input class="form-check-input" type="radio" name="gender" id="gender" value="Hembra">
-        <label class="form-check-label" for="gender">Hembra</label>
+<section class="white-section padding56">
+    <div class="container">
+      <div class="column2 shadow" style="background-image:url('http://res.cloudinary.com/abdaio/image/upload/c_scale,w_1016/v1524593963/puppy.jpg')">
+
+      </div>
+      <div class="column2">
+          <h3 class="accent">Lo que tienes que saber a la hora de adoptar</h3>
+          <p>
+            Cuando se acercan fiestas importantes, como las Navidades, a mucha gente le ronda la idea de añadir un nuevo miembro a la familia: un cachorro de perro. Sin embargo, esta es una decisión que hay que meditar. No valen las prisas y es preciso asegurarse de qué es lo que se está haciendo.          </p>
+          <p>
+            Cuando se adopta un cachorro se da por hecho que el perro vivirá con su nueva familia para toda su vida, que con suerte será de 12 o 15 años aproximadamente, así que es un compromiso muy importante. Por eso, debes tener en cuenta estos consejos antes de hacerte con una cría:          </p>
+          <p>
+            <span class="standard-link">Leer más <i class="fas fa-chevron-right"></i></span>
+          </p>
       </div>
     </div>
-    <div class="form-group">
-      <label for="size">Tamaño:</label>
-      <select type="select" class="form-control" id="size" name="size" aria-describedby="size">
-        <option>Pequeño</option>
-        <option>Mediano</option>
-        <option>Grande</option>
-      </select>
-    </div>
-</div> 
-  <button type="submit" class="btn btn-primary">Search</button>
-</form>
+  </section>
+</div>
+</div>
+
+</div>
