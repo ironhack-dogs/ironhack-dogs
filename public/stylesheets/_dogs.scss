@@ -1,0 +1,18 @@
+#welcome {
+  height: 600px;
+  background-image: url($welcome-url);
+  background-size: cover;
+  color: $fontwhite;
+  h2 {
+    padding-top: 10%;
+    padding-left: 30px;
+  }
+  span {
+    font-size: 1.5em;
+  }
+}
+
+
+.separator{
+  background-color: $orange;
+}

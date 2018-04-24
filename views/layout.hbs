@@ -4,37 +4,35 @@
 <head>
   <meta charset="utf-8">
   <title>{{Title}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
   <div class="navbar navbar-default">
-    <a class="nav-item navbar-text">MADRID|ADOPTA</a>
-
-    {{#if user}}
-    
-    <span class="nav-item navbar-text">Hello, <a href="/my-profile">{{user.username}}</a>!</span>
+    <img src="/images/Logo.png" class="navbar-brand" alt="MadridAdoptaLogo">
+    <a class="nav-item navbar-text" href="/centers">Centros de Adopción</a>
+    <a class="nav-item navbar-text" href="/dogs">Mascotas</a>
+    {{#if user}}   
+    <a class="nav-item navbar-text" href="/logout">Cerrar Sesión</a> 
     {{else}}
     <a class="nav-item navbar-text" href="/login">Iniciar sesión</a>
     <a class="nav-item navbar-text" href="/signup">Registrarme</a>
     {{/if}}
-    <a class="nav-item navbar-text" href="/dogs">Mascotas</a>
-    <a class="nav-item navbar-text" href="/centers">Centros</a>
-    <a class="nav-item navbar-text" href="/logout">Cerrar Sesión</a>
   </div>
+  <div class="protector-top"></div>
   <div class="main-container">
     {{{body}}}
   </div>
 
-  <footer>
-    <li>
-      <a href="/dogs">Mascotas</a>
-    </li>
-    <li>
-      <a href="/centers">Centros</a>
-    </li>
 
+  <div class="protector-footer"></div>
+  <footer class="container background">
+    <div class="container content">
+      <img src="/images/logo-solo.png" alt="logo">
+      <img src="/images/logo-text.png" alt="text">
+    </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

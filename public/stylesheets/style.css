@@ -1,27 +1,88 @@
-body {
-  padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
-a {
-  color: #00B7FF; }
-
-.card {
-  height: 260px;
-  width: 200px;
-  box-shadow: 0 1px 3px grey;
-  float: left; }
+.navbar {
+  background-color: rgba(0, 0, 0, 0.66);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
+  .navbar .navbar-text {
+    color: white;
+    float: right; }
+  .navbar img {
+    padding: 5px;
+    height: 50px; }
 
 footer {
   margin-top: 60px;
   text-align: center;
-  background-color: #ececec;
+  background-color: black;
   width: 100%;
+  height: 100px;
   position: fixed;
   bottom: 0;
   padding: 20px; }
+  footer .content {
+    align-items: center; }
+    footer .content img {
+      height: 72px; }
 
-footer li {
-  display: inline-block;
-  padding: 0 30px; }
+.protector-top {
+  min-height: 50px; }
+
+.protector-footer {
+  min-height: 100px; }
+
+#welcome {
+  height: 600px;
+  background-image: url("http://res.cloudinary.com/abdaio/image/upload/v1524566491/mascotas-header.jpg");
+  background-size: cover;
+  color: white; }
+  #welcome h2 {
+    padding-top: 10%;
+    padding-left: 30px; }
+  #welcome span {
+    font-size: 1.5em; }
+
+.separator {
+  background-color: orange; }
+
+body {
+  padding: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #7a0e02; }
+
+a {
+  color: #00B7FF; }
+
+.background {
+  width: 100%; }
+  .background h3 {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.5em; }
+
+.content {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+  .content .card {
+    padding: 20px;
+    height: 360px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 1px 3px grey; }
+    .content .card img {
+      height: 230px;
+      width: 230px;
+      border-radius: 50%; }
+    .content .card a {
+      color: #7a0e02;
+      display: block;
+      font-size: 1.33em;
+      padding: 16px 0 8px; }
+    .content .card p {
+      color: black; }
 
 /*# sourceMappingURL=style.css.map */
