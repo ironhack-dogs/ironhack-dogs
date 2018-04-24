@@ -32,7 +32,14 @@ router.get("/:id/accept", isSuperAdmin(), (req, res, next) => {
 
 // Rechazar solicitud para convertirse en Admin
 router.get("/:id/deny", isSuperAdmin(), (req, res, next) => {
-
+  Request.findById(req.params.id)
+  .then(request => {
+    User.findById(request.user)
+    .then(user => {
+      sendMail(user.email);
+      res.redirect("/admin")
+    })
+  })
 });
 
 module.exports = router;
