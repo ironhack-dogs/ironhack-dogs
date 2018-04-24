@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Center = require("../models/Center");
+<<<<<<< HEAD
+=======
+const Dog = require("../models/Dog");
+>>>>>>> abdallah
 const isAdmin = require("../middleware/isAdmin");
 
 // List all centers
@@ -13,10 +17,21 @@ router.get("/", (req, res, next) => {
 });
 
 // Show one center
+// router.get("/:id", (req, res, next) => {
+//   Center.findById(req.params.id)
+//   .then(center => res.render("centers/profile", { user: req.user, center }))
+//   .catch(e => next(e));
+// });
+
 router.get("/:id", (req, res, next) => {
   Center.findById(req.params.id)
-  .then(center => res.render("centers/profile", { user: req.user, center }))
-  .catch(e => next(e));
+  .then(centerData => {
+    Dog.find({'center' : centerData._id})
+      .then(dogData =>{
+        res.render("centers/profile", { user: req.user, centerData, dogData });
+
+      })
+  });
 });
 
 // CRUD Edit Center
@@ -40,8 +55,13 @@ router.get("/:id/delete", isAdmin(), (req, res, next) => {
 });
 
 // List all centers
+
 router.get("/", (req, res, next) => {
-  res.render("centers/index", { user: req.user });
+  Center.find()
+  .then(centerData => {    
+    res.render("centers/index", { user: req.user, centerData });
+  });
 });
+
 
 module.exports = router;
