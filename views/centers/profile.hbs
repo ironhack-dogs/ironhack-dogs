@@ -2,28 +2,33 @@
     var center = {{{centerData.location}}};
 </script>
 
-<section class="center-banner">
-    <div class="center-title">
-      Cientos de perros buscan familia.
-      <a class="btn-ghost" href="#">Encuentra tu mascota</a>
-    </div>
+
+<section style="background-image:url('{{centerData.banner_url}}')" class="center-small-banner">
+  <div class="center-title">
+    {{centerData.name}}
+  </div>
+</section>
+<section class="white-section">
+ <div class="container">
+    <p>{{centerData.location.coordinates}}</p>
+    <p>{{centerData.description}}</p>
+ </div>
+</section>
+<section>
+    <div id="map"></div>
 </section>
 
-<img stylesrc="{{centerData.banner_url}}">
-<h1>{{centerData.name}}</h1>
 
-<img height="100px" width="100px" src="{{centerData.logo_url}}">
-
-<p>{{centerData.location.coordinates}}</p>
-<p>{{centerData.description}}</p>
-<div style="min-height:120px">
-<h2>Nuestras mascotas</h2>
-{{#each dogData}}
-<li>
- <a href="/dogs/{{this._id}}">{{this.name}}</a>
-</li>
-{{/each}}
+<section class="grey-section padding54">
+    <h1>Nuestras mascotas</h1>
+    <div class="container">    
+  {{#each dogData}}
+  <div class="card">
+    <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
+    <a href="/dogs/{{this._id}}">{{this.name}} </a> 
+    <p>{{this.gender}} de {{this.relativeDate}}</p>
+    <div class="social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+  </div>
+  {{/each}}
 </div>
-<p>{{centerData.address}}</p>
-<div style="height:400px, width: 700px" id="map"></div>
-
+</section>

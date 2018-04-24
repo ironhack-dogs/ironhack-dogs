@@ -11,6 +11,19 @@
   text-align: center;
 }
 
+
+.dogs-small-banner {
+  box-sizing: border-box;
+  background-image: url('http://res.cloudinary.com/abdaio/image/upload/v1524566491/mascotas-header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  padding-top: 120px;
+  
+  text-align: center;
+}
+
 .dogs-title {
     font-weight: 300;
     color: white;
@@ -63,3 +76,13 @@
   
 }
 
+.social {
+  padding-top: 24px;
+
+  a {
+    color: $accent;
+    font-size: 12pt;
+    padding: 0 8px;
+    display:inline-block;
+  }
+}

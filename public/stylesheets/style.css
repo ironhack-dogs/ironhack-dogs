@@ -49,10 +49,9 @@ section {
 
 .column3 {
   box-sizing: border-box;
-  width: 32%;
-  min-width: 200px;
+  width: 20%;
+  min-width: 180px;
   height: 100px;
-  background-color: forestgreen;
   margin: 8px 8px; }
 
 .column2 {
@@ -69,7 +68,6 @@ section {
   width: 98%;
   min-width: 800px;
   height: 100px;
-  background-color: salmon;
   margin: 10px 10px; }
 
 .grey-section {
@@ -153,6 +151,16 @@ section {
   padding-top: 180px;
   text-align: center; }
 
+.dogs-small-banner {
+  box-sizing: border-box;
+  background-image: url("http://res.cloudinary.com/abdaio/image/upload/v1524566491/mascotas-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  padding-top: 120px;
+  text-align: center; }
+
 .dogs-title {
   font-weight: 300;
   color: white;
@@ -195,6 +203,235 @@ section {
     font-size: 11pt;
     line-height: 16pt; }
 
+.social {
+  padding-top: 24px; }
+  .social a {
+    color: #924992;
+    font-size: 12pt;
+    padding: 0 8px;
+    display: inline-block; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11pt; }
+
+footer {
+  width: 100%;
+  height: 150px;
+  background-color: black; }
+
+p {
+  font-size: 11pt;
+  line-height: 16pt; }
+
+section {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 300px; }
+
+.standard-link {
+  padding-top: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #924992; }
+
+.accent {
+  color: #924992; }
+
+.center {
+  margin: 0 auto;
+  height: 100%;
+  vertical-align: middle; }
+
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(58, 58, 58, 0.7);
+  z-index: 10;
+  color: white; }
+
+.menu {
+  box-sizing: border-box;
+  text-transform: uppercase;
+  padding: 20px;
+  width: 100%;
+  height: 60px;
+  background-color: #FFAD02;
+  z-index: 10;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+  letter-spacing: 2pt; }
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  padding: 8px; }
+
+.column3 {
+  box-sizing: border-box;
+  width: 32%;
+  min-width: 200px;
+  height: 100px;
+  background-color: forestgreen;
+  margin: 8px 8px; }
+
+.column2 {
+  box-sizing: border-box;
+  width: 45%;
+  min-width: 300px;
+  margin: 10px 10px;
+  padding: 10px;
+  background-size: cover; }
+
+.column1 {
+  box-sizing: border-box;
+  width: 98%;
+  min-width: 800px;
+  height: 100px;
+  background-color: salmon;
+  margin: 10px 10px; }
+
+.grey-section {
+  background-color: #EFEFEF; }
+
+.white-section {
+  background-color: #FFFFFF; }
+
+.ad-section {
+  background-image: url("http://res.cloudinary.com/abdaio/image/upload/v1524566448/woman-dog.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 430px;
+  text-align: center; }
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63, 51, 88, 0.7); }
+
+.hero {
+  box-sizing: border-box;
+  background-image: url("http://res.cloudinary.com/abdaio/image/upload/v1524566188/index-hero-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  padding-top: 140px;
+  padding-left: 200px; }
+
+.hero-title {
+  font-weight: 300;
+  color: white;
+  font-size: 28pt;
+  position: relative;
+  max-width: 300px; }
+
+h3 {
+  font-size: 18pt;
+  font-weight: 300;
+  padding: 2px 0; }
+
+.btn-ghost {
+  padding: 8px 14px;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 10pt;
+  color: white;
+  text-decoration: none; }
+
+.btn-primary {
+  padding: 8px 14px;
+  background-color: #FFAD02;
+  border-radius: 30px;
+  font-size: 10pt;
+  color: white;
+  text-decoration: none; }
+
+.img-round {
+  margin-top: 30px;
+  background-size: cover;
+  height: 230px;
+  width: 230px;
+  border-radius: 50%;
+  border: 5px solid #FFAD02; }
+
+.shadow {
+  box-shadow: 0 2px 4px rgba(39, 39, 39, 0.8); }
+
+.padding40 {
+  padding: 40px 0; }
+
+.padding56 {
+  padding: 56px 0; }
+
+table {
+  margin: 20px 0; }
+
+td {
+  padding: 4px;
+  padding-right: 30px; }
+
+td:nth-child(odd) {
+  font-weight: 700; }
+
+.center-small-banner {
+  box-sizing: border-box;
+  background-image: url("https://res.cloudinary.com/abdaio/image/upload/c_scale,w_1965/v1524605336/sam-manns-399879-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  padding-top: 120px;
+  text-align: center; }
+
+.center-title {
+  font-weight: 300;
+  color: white;
+  font-size: 28pt;
+  position: relative; }
+
+#map {
+  width: 100%;
+  min-height: 500px; }
+
+.auth-banner {
+  box-sizing: border-box;
+  background-image: url("http://res.cloudinary.com/abdaio/image/upload/v1524566491/mascotas-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100%;
+  padding-top: 120px;
+  text-align: center; }
+
+.auth-title {
+  font-weight: 300;
+  color: white;
+  font-size: 28pt;
+  position: relative; }
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-size: 16pt; }
+
 body {
   margin: 0;
   padding: 0;
@@ -214,6 +451,9 @@ body {
 
 .padding56 {
   padding: 56px 0; }
+
+.padding0 {
+  padding: 0; }
 
 .background {
   width: 100%; }
