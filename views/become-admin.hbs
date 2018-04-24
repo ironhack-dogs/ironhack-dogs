@@ -8,14 +8,22 @@
 </div>
 {{/if}}
 
+{{#if success}}
+<p>{{success.message}}</p>
+{{/if}}
 <form action="/become-admin" method="post">
   <label for="subject">Asunto</label>
   <input type="text" name="subject" value="Registro de alta de Centro">
   <br>
   <label for="user">Nombre de usuario</label>
   <input type="text" name="user">
-  <label for="message">Mensaje</label>
   <br>
+
+  <label for="center-name">Nombre del centro</label>
+  <input type="text" name="center-name">
+
+  <label for="message">Mensaje</label>
   <textarea type="textarea" name="message" id=""></textarea>
+
   <button type="submit">Submit</button>
 </form>
