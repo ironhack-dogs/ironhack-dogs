@@ -1,10 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Center = require("../models/Center");
-<<<<<<< HEAD
-=======
 const Dog = require("../models/Dog");
->>>>>>> abdallah
 const isAdmin = require("../middleware/isAdmin");
 
 // List all centers
