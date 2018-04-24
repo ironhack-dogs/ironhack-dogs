@@ -30,7 +30,7 @@ router.post("/become-admin", (req, res, next) => {
             message:
               "Enhorabuena, tú solicitud está en proceso de revisión, cuando todo esté listo te enviaremos un email para dar de alta tu centro"
           };
-          res.render("become-admin", { success });
+          res.render("become-admin", {user:req.user, success });
         });
       }
     })

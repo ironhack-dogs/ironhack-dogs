@@ -19,6 +19,7 @@
     "express": "~4.16.0",
     "express-session": "^1.15.6",
     "hbs": "~4.0.1",
+    "mjml-utils": "^2.2.1",
     "moment": "^2.22.1",
     "mongoose": "^5.0.15",
     "mongoose-connect": "0.0.3",
