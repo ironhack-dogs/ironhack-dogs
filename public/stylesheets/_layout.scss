@@ -1,50 +1,185 @@
-.navbar {
-  background-color: rgba($color: #000000, $alpha: 0.66);
+.nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
-  .navbar-text {
-    color: $fontwhite;
-    float: right;
+  height: 70px;
+  background: rgba(26, 26, 26, 0.9);
+  z-index: 10;
+  color: $fontwhite;
+  .navbar-text { color: $fontwhite; float: right;}
+  
+  .container {
+    
+    justify-content: flex-end;
+    
+  
+    div:first-child{
+      position: absolute;
+      left: 40px;
+    }
   }
-  img {
-    padding: 5px;
-    height: 50px;
+  .link-block{
+    padding-top: 16px;
+    display: inline-block;
+  }
+  
+  
+  a {
+    padding: 0 14px;
+    text-decoration: none;
+    color: $fontwhite;
+    font-weight: 400;
+  }
+
+  a:hover {
+    text-shadow: 0 4px 10px #444444;
   }
 }
 
 footer {
-  margin-top: 60px;
-  text-align: center;
-  background-color: black;
   width: 100%;
+  height: 70px;
+  background-color: black;
+  color: $fontwhite;
+  text-align: center;
+}
+
+
+section {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 300px;
+}
+
+
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+  padding: 8px;
+}
+
+
+
+
+.column3 {
+  box-sizing: border-box;
+  width: 32%;
+  min-width: 200px;
   height: 100px;
-  position: fixed;
-  bottom: 0;
+  background-color: forestgreen;
+  margin: 8px 8px;
+}
+
+.column2 {
+  box-sizing: border-box;
+  width: 45%;
+  min-width: 300px;
+  min-height: 200px;
+  margin: 10px 10px;
+  padding: 10px;
+  background-size: cover; 
+}
+
+.column1 {
+  box-sizing: border-box;
+  width: 98%;
+  min-width: 800px;
+  height: 100px;
+  background-color: salmon;
+  margin: 10px 10px;
+}
+
+.grey-section {
+  background-color: #EFEFEF;
+}
+
+.white-section {
+  background-color: #FFFFFF;
+}
+
+.ad-section {
+  background-image: url('http://res.cloudinary.com/abdaio/image/upload/v1524566448/woman-dog.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 430px;
+  text-align: center;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63, 51, 88, 0.7)
+}
+
+.hero {
+  box-sizing: border-box;
+  background-image: url('http://res.cloudinary.com/abdaio/image/upload/v1524566188/index-hero-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  padding-top: 140px;
+  padding-left: 200px;
+
+  .hero-title {
+    font-weight: 300;
+    color: white;
+    font-size: 28pt;
+    position: relative;
+    max-width: 300px;
+  }
+
+}
+
+
+
+.menu {
+  box-sizing: border-box;
+  text-transform: uppercase;
   padding: 20px;
-  .footer-elements {
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-    max-width: 1200px;
-    :first-child{
-      float: left;
-    }
-    :last-child{
-      float: right;
-    }
-    img {
-      height: 72px;
-    }
+  width: 100%;
+  height: 60px;
+  background-color: #FFAD02;
+  z-index: 10;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+  letter-spacing: 2pt;
+
+  a {
+    text-decoration: none;
+    color: $fontwhite;
   }
 }
 
-.protector-top {
-  min-height: 50px;
-  clear: both;
+
+
+section {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 300px;
 }
 
-.protector-footer {
-  min-height: 100px;
+.standard-link {
+  padding-top: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #924992;
+}
+
+.accent {
+  color: #924992;
+}
+
+.center {
+  margin: 0 auto;
+  height: 100%;
+  vertical-align: middle;
 }

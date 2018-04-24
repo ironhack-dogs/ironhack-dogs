@@ -1,0 +1,20 @@
+// INDEX
+
+.center-banner {
+  box-sizing: border-box;
+  background-image: url('http://res.cloudinary.com/abdaio/image/upload/v1524566188/index-hero-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  padding-top: 140px;
+  padding-left: 200px;
+}
+
+.center-title {
+    font-weight: 300;
+    color: white;
+    font-size: 28pt;
+    position: relative;
+    max-width: 300px;
+  }

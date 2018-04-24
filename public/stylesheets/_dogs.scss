@@ -1,18 +1,65 @@
-#welcome {
-  height: 600px;
-  background-image: url($welcome-url);
+
+.dogs-banner {
+  box-sizing: border-box;
+  background-image: url('http://res.cloudinary.com/abdaio/image/upload/v1524566491/mascotas-header.jpg');
   background-size: cover;
-  color: $fontwhite;
-  h2 {
-    padding-top: 10%;
-    padding-left: 30px;
-  }
-  span {
-    font-size: 1.5em;
-  }
+  background-repeat: no-repeat;
+  height: 460px;
+  width: 100%;
+  padding-top: 180px;
+  
+  text-align: center;
 }
 
-
-.separator{
-  background-color: $orange;
+.dogs-title {
+    font-weight: 300;
+    color: white;
+    font-size: 28pt;
+    position: relative;
 }
+
+.menu{
+    label {
+      padding-right: 0 20px;
+      text-transform: capitalize;
+      font-weight: 400;
+    }
+
+    button {
+      font-size: 11pt;
+      border:none;
+      box-sizing: border-box;
+      border-radius: 30px;
+      padding:5px 10px;
+      margin-left: 30px;
+    }
+}
+
+.card {
+  background-color:white;
+  height: 360px;
+  margin: 0px 10px 70px 10px;
+  width: 240px;
+  text-align: center;
+  border-radius:  5px 5px 6px 6px;
+  box-shadow: 0 1px 5px grey;
+  .picture {
+    background-size: cover;
+    height: 170px;
+    width: 240px;
+  }
+  a {
+    color: $accent;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    font-size: 1.33em;
+    padding: 16px  8px;
+  }
+  p {
+    font-size: 11pt;
+    line-height: 16pt;
+  }
+  
+}
+

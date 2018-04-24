@@ -6,10 +6,19 @@ const Request = require("../models/Request");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
+<<<<<<< HEAD
   Dog.find().then(dogs =>
     res.render("index", { user: req.user, title: "Madrid Adopta", dogs })
   );
 });
+=======
+   Dog.count().exec(function (err, count) {
+        var random = Math.floor(Math.random() * count)
+        Dog.findOne().skip(random).exec()
+      .then(dogs => res.render("index", { user: req.user, title: "Madrid Adopta", dogs }))})})
+
+;
+>>>>>>> abdallah
 
 router.get("/become-admin", (req, res, next) => res.render("become-admin", req.user));
 

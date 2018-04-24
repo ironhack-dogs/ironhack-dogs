@@ -1,31 +1,73 @@
-
-
-
-<h1>{{title}}</h1>
-
-  </div>
-  {{#if message}}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <div>
-
-{{#if user}}
-<div class="jumbtron">
-  <h2>Hello {{user.username}}!</h2>
-{{/if}}
-
-<p>
-  Status: {{user.role}}
-</p>
-
-<a href="/my-profile"> Go to my profile</a>
-
-<div class="container" id="dog-container">
-  <div class="row">
-    {{#each dogs}}
-    <div class="col-md-4">
-    <a href="/dogs/{{_id}}"><h4>{{name}}</h4></a>
-    <img src="{{picture_url}}" width="200"> 
+<section class="hero">
+    <div class="hero-title">
+      Cientos de perros buscan familia.
+      <a class="btn-ghost padding24" href="#">Encuentra tu mascota</a>
     </div>
-    {{/each}}
+</section>
+
+<div class="menu">
+    <span><a href="">Mascotas</a></span>
+    <span><a href="">Centros de adopción</a></span>
+    <span><a href="">Consejos y salud</a></span>
   </div>
+
+<section class="grey-section padding56">
+    <div class="container">
+     <div class="column2">
+        <h3>Te presentamos a <b class="accent">{{dogs.name}}</b></h3>
+        <p>{{dogs.description}}</p>
+        <table>
+          <tr>
+            <td>Edad</td>
+            <td>{{dogs.birthday}}</td>
+          </tr>
+          <tr>
+              <td>Sexo</td>
+              <td>{{dogs.gender}}</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>{{dogs.color}}</td>
+              </tr>
+              <tr>
+                  <td>Tamaño</td>
+                  <td>{{dogs.size}}</td>
+                </tr>
+        </table>
+        <a class="standard-link" href="/dogs/{{dogs._id}}">Consulta su ficha <i class="fas fa-chevron-right"></i></a> 
+    </div>
+    <div class="column2 ">
+      <div class="img-round center" style="background-image:url('{{dogs.picture_url}}')"></div></div>
+    </div>
+  </section>
+
+  <section class="white-section padding56">
+    <div class="container">
+      <div class="column2 shadow" style="background-image:url('http://res.cloudinary.com/abdaio/image/upload/v1524577776/article.png')">
+
+      </div>
+      <div class="column2">
+          <h3 class="accent">4 planes con tu perro por la sierra de Madrid</h3>
+          <p>
+              Seamos sinceros, no se puede ir con nuestro perro a cualquier montaña, pues algunas pueden resultar muy peligrosas para él.
+          </p>
+          <p>
+              Para que eso no sea un problema, por ejemplo, en Madrid se han creado en diversas montañas rutas de senderismo que poder hacer con nuestras mascotas en las que además podrás quedar con otros dueños con sus perros y hacer el sendero juntos. ¡Todo un planazo!
+          </p>
+          <p>
+            <span class="standard-link">Leer más <i class="fas fa-chevron-right"></i></span>
+          </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ad-section ">
+    <div class="overlay">
+    <div class="padding56">
+        <span class="hero-title">Si no puedes adoptar,<br>dales un poco de tu tiempo.</span>
+    </div>
+    <div>
+      <a class="btn-primary" href="#">Apúntate como voluntario</a>
+    </div>
+  </div>
+  </section>
