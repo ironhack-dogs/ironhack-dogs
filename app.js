@@ -71,6 +71,9 @@ app.use("/", index);
 const authRoutes = require("./routes/authentication");
 app.use("/", authRoutes);
 
+const adminRoutes = require("./routes/admin");
+app.use("/admin", adminRoutes);
+
 const userRoutes = require("./routes/user");
 app.use("/my-profile", userRoutes);
 
