@@ -30,13 +30,16 @@
       <i class="fas fa-search"></i> Buscar</button>
 
 </div>
-
+{{relativeDate}}
 <div class="container padding56">
   {{#each dogs}}
+
   <div class="card">
     <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
-    <a href="/dogs/{{this._id}}">{{this.name}}</a>
-    <p>{{this.gender}} de {{this.birthday}}</p>
+    <a href="/dogs/{{this._id}}">{{this.name}} </a> 
+    <p>{{this.gender}} de {{this.relativeDate}}</p>
+  
+    <div class="social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
   </div>
   {{/each}}
 </div>

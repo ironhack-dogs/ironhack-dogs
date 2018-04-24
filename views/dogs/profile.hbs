@@ -1,3 +1,43 @@
+<section class="dogs-small-banner">
+  <div class="dogs-title">
+    ¡Hola! Yo soy {{dogData.name}}.
+
+  </div>
+</section>
+
+<section class="grey-section padding56">
+    <div class="container">
+     <div class="column2">
+        <h3>Te presentamos a <b class="accent">{{dogData.name}}</b></h3>
+        <p>{{dogData.description}}</p>
+        <table>
+          <tr>
+            <td>Edad</td>
+            <td>{{dogData.relativeDate}}</td>
+          </tr>
+          <tr>
+              <td>Sexo</td>
+              <td>{{dogData.gender}}</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>{{dogData.color}}</td>
+              </tr>
+              <tr>
+                  <td>Tamaño</td>
+                  <td>{{dogData.size}}</td>
+              </tr>
+              <tr>
+                  <td>Referencia</td>
+                  <td>{{dogData.reference_id}}</td>
+              </tr>
+        </table>
+        <a class="standard-link" href="/dogs/{{dogData._id}}">Consulta su ficha <i class="fas fa-chevron-right"></i></a> 
+    </div>
+    <div class="column2 ">
+      <div class="img-round center" style="background-image:url('{{dogData.picture_url}}')"></div></div>
+    </div>
+  </section>
 <p>Soy el perfil de {{dogData.name}}</p>
 
 

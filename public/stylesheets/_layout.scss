@@ -51,8 +51,6 @@ section {
   min-height: 300px;
 }
 
-
-
 .container {
   box-sizing: border-box;
   margin: 0 auto;
@@ -65,14 +63,11 @@ section {
 }
 
 
-
-
 .column3 {
   box-sizing: border-box;
-  width: 32%;
-  min-width: 200px;
+  width: 20%;
+  min-width: 180px;
   height: 100px;
-  background-color: forestgreen;
   margin: 8px 8px;
 }
 
@@ -91,7 +86,6 @@ section {
   width: 98%;
   min-width: 800px;
   height: 100px;
-  background-color: salmon;
   margin: 10px 10px;
 }
 

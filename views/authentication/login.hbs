@@ -1,23 +1,36 @@
-  {{#if message}}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
+<section class="auth-banner">
+  <div class="auth-title">
+    Conexión
+  </div>
+</section>
 
+
+
+<section class="white-section padding56">
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6 centered-form">
-      <form action="/login" method="post">
-        <div class="form-group">
-          <label for="username">Username</label>
+  
+  <div class="column2 padding form-container">
+<form action="/login" method="post">
+        <div>
+          <label for="username">Nombre de usuario</label>
           <input type="text" name="username" class="form-control">
         </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
+        <div>
+          <label for="password">Contraseña</label>
           <input type="password" name="password" class="form-control">
         </div>
 
-        <button  class="btn btn-primary" type="submit">Login</button>
+        <button  class="btn-primary" type="submit">Enviar</button>
       </form>
-    </div>
   </div>
+<div class="column2 padding56">
+ {{#if message}}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+  </div>  
+
 </div>
+
+
+</section>

@@ -1,6 +1,9 @@
 @import "variables";
 @import "layout";
 @import "dogs";
+@import "landing";
+@import "centers";
+@import "forms";
 
 body {
   margin: 0;
@@ -25,6 +28,10 @@ body {
 
 .padding56{
   padding: 56px 0;
+}
+
+.padding0{
+  padding: 0;
 }
 
 .background {
@@ -94,8 +101,6 @@ td:nth-child(odd) {
 }
 
 
-
- 
 
 // IMAGES
 

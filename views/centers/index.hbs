@@ -1,5 +1,17 @@
-Soy la lista de centros de adopción
+<section class="center-small-banner">
+  <div class="center-title">
+    Centros de acogida.
 
-{{#each centerData}}
+  </div>
+</section>
+
+<section class="white-section padding56">
+  <div class="container">
+  <div class="column2">
+
+  {{#each centers}}
   <li><a href="/centers/{{this._id}}">{{this.name}}</a></li>
 {{/each}}
+</div>
+</div>
+</section>

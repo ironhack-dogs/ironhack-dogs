@@ -1,20 +1,26 @@
 // INDEX
 
-.center-banner {
+.center-small-banner {
   box-sizing: border-box;
-  background-image: url('http://res.cloudinary.com/abdaio/image/upload/v1524566188/index-hero-background.jpg');
+  background-image: url('https://res.cloudinary.com/abdaio/image/upload/c_scale,w_1965/v1524605336/sam-manns-399879-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 200px;
   width: 100%;
-  padding-top: 140px;
-  padding-left: 200px;
+  padding-top: 120px;
+  
+  text-align: center;
 }
 
 .center-title {
-    font-weight: 300;
-    color: white;
-    font-size: 28pt;
-    position: relative;
-    max-width: 300px;
-  }
+  font-weight: 300;
+  color: white;
+  font-size: 28pt;
+  position: relative;
+}
+
+#map {
+  width: 100%;
+  min-height:500px;
+  
+}

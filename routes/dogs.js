@@ -83,6 +83,10 @@ router.post("/edit/:id", (req, res, next) => {
 
 router.get("/", (req, res, next) => {
   Dog.find().then(dogs => {
+    dogs.forEach((e,i) => {
+      moment.locale('es');
+      e.relativeDate = moment(e.birthday).fromNow(true);
+    });
     res.render("dogs/index", { user: req.user, dogs });
   });
 });
@@ -91,6 +95,8 @@ router.get("/:id", (req, res, next) => {
   Dog.findById(req.params.id)
     .populate("center")
     .then(dogData => {
+      moment.locale('es');
+      dogData.relativeDate = moment(dogData.birthday).fromNow(true);
       res.render("dogs/profile", { user: req.user, dogData });
     });
 });
