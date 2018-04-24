@@ -23,8 +23,17 @@ footer {
   position: fixed;
   bottom: 0;
   padding: 20px;
-  .content {
-    align-items: center;
+  .footer-elements {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px;
+    :first-child{
+      float: left;
+    }
+    :last-child{
+      float: right;
+    }
     img {
       height: 72px;
     }
@@ -33,6 +42,7 @@ footer {
 
 .protector-top {
   min-height: 50px;
+  clear: both;
 }
 
 .protector-footer {

@@ -20,13 +20,21 @@ footer {
   position: fixed;
   bottom: 0;
   padding: 20px; }
-  footer .content {
-    align-items: center; }
-    footer .content img {
+  footer .footer-elements {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    max-width: 1200px; }
+    footer .footer-elements :first-child {
+      float: left; }
+    footer .footer-elements :last-child {
+      float: right; }
+    footer .footer-elements img {
       height: 72px; }
 
 .protector-top {
-  min-height: 50px; }
+  min-height: 50px;
+  clear: both; }
 
 .protector-footer {
   min-height: 100px; }
@@ -65,11 +73,11 @@ a {
   width: 90%;
   max-width: 1200px;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
   .content .card {
-    padding: 20px;
     height: 360px;
+    margin: 0;
     width: 360px;
     text-align: center;
     box-shadow: 0 1px 3px grey; }

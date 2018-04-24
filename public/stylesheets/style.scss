@@ -26,14 +26,13 @@ a {
   width: 90%;
   max-width: 1200px;
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
   .card {
-    padding: 20px;
     height: 360px;
+    margin: 0;
     width: 360px;
     text-align: center;
-
     box-shadow: 0 1px 3px grey;
     img {
       height: 230px;
