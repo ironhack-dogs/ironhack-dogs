@@ -6,9 +6,8 @@ const isAdmin = require("../middleware/isAdmin");
 
 // List all centers
 router.get("/", (req, res, next) => {
-  Center.find().then(centers => {
-    console.log(centers)
-    res.render("centers/index", { user: req.user, centers })
+  Center.find().then(centerData => {
+    res.render("centers/index", { user: req.user, centerData })
   
   });
 });

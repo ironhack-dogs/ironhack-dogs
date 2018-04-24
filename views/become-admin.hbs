@@ -1,0 +1,21 @@
+<h1>Formulario de contacto para registrar tu centro</h1>
+
+{{#if failure}}
+<div>
+  <p>{{failure.message}}</p>
+  <p>Si no estás registrado, puedes hacerlo siguiendo <a href="signin">este enlace</a>
+  </p>
+</div>
+{{/if}}
+
+<form action="/become-admin" method="post">
+  <label for="subject">Asunto</label>
+  <input type="text" name="subject" value="Registro de alta de Centro">
+  <br>
+  <label for="user">Nombre de usuario</label>
+  <input type="text" name="user">
+  <label for="message">Mensaje</label>
+  <br>
+  <textarea type="textarea" name="message" id=""></textarea>
+  <button type="submit">Submit</button>
+</form>
