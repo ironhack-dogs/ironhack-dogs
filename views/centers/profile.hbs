@@ -1,1 +1,23 @@
-<h1>{{center.name}}</h1>
+<script type="text/javascript">
+    var center = {{{centerData.location}}};
+</script>
+
+
+<img src="{{centerData.banner_url}}">
+<h1>{{centerData.name}}</h1>
+
+<img height="100px" width="100px" src="{{centerData.logo_url}}">
+
+<p>{{centerData.location.coordinates}}</p>
+<p>{{centerData.description}}</p>
+<div style="min-height:120px">
+<h2>Nuestras mascotas</h2>
+{{#each dogData}}
+<li>
+ <a href="/dogs/{{this._id}}">{{this.name}}</a>
+</li>
+{{/each}}
+</div>
+<p>{{centerData.address}}</p>
+<div style="height:400px, width: 700px" id="map"></div>
+
