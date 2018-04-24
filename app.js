@@ -78,7 +78,7 @@ const dogRoutes = require("./routes/dogs");
 app.use("/dogs", dogRoutes);
 
 const centerRoutes = require("./routes/centers");
-app.use("/", centerRoutes);
+app.use("/centers", centerRoutes);
 
 
 module.exports = app;
