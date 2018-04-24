@@ -5,10 +5,7 @@ const Center = require("../models/Center");
 
 // SEE PROFILE
 router.get("/", (req, res, next) => {
-  Center.findOne({"admin_id": req.user.id}).then(center => {
-    console.log(center)
-    res.render("user/profile", { user: req.user, center });
-  });
+  Center.findOne({"admin_id": req.user.id}).then(center => res.render("user/profile", { user: req.user, center }))
 });
 
 
@@ -19,7 +16,6 @@ router.get("/create-center", (req, res, next) => {
 
 router.post("/create-center", (req, res, next) => {
   const { name, phone, email, website_url, description } = req.body;
-  console.log(req.user);
   const newCenter = new Center({
     name,
     email,

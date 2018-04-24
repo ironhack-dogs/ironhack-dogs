@@ -6,10 +6,7 @@ const Dog = require("../models/Dog");
 /* GET home page */
 router.get("/", (req, res, next) => {
   Dog.find()
-  .then(dogs => {
-    res.render("index", { user: req.user, title: "Madrid Adopta", dogs });
-    console.log(dogs);
-  })
+  .then(dogs => res.render("index", { user: req.user, title: "Madrid Adopta", dogs }))
 });
 
 module.exports = router;
