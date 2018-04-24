@@ -8,7 +8,6 @@ router.get("/", (req, res, next) => {
   Dog.find()
   .then(dogs => {
     res.render("index", { user: req.user, title: "Madrid Adopta", dogs });
-    console.log(dogs);
   })
 });
 

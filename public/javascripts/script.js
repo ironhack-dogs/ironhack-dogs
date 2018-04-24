@@ -1,5 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+const dogAPI = new APIHandler("https://dog.ceo/api/breeds")
 
-  console.log('IronGenerator JS imported successfully!');
+$(document).ready(() => {
+  console.log("document loaded");
+  dogAPI.getOneRegister()
+  .then((data) => {
+    console.log(data.message)
+    const newDogPhoto = `<img src="${data.message}">Foto de perro</img>`
+    $("#dog-container").append(newDogPhoto);
+    console.log(newDogPhoto)
+  })
 
-}, false);
+});

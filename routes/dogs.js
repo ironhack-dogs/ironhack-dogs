@@ -83,7 +83,6 @@ router.post("/edit/:id", (req, res, next) => {
 
 router.get("/", (req, res, next) => {
   Dog.find().then(dogs => {
-    console.log(req.user);
     res.render("dogs/index", { user: req.user, dogs });
   });
 });
@@ -100,12 +99,10 @@ router.post("/search", (req, res, next) => {
   const { breed, gender, size } = req.body;
   if (breed === "") {
     Dog.find({ gender, size }).then(dogs => {
-      console.log(req.user);
       res.render("dogs/index", { user: req.user, dogs });
     });
   } else {
     Dog.find({ breed, gender, size }).then(dogs => {
-      console.log(req.user);
       res.render("dogs/index", { user: req.user, dogs });
     });
   }

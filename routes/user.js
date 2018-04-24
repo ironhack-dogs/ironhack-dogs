@@ -6,10 +6,7 @@ const googleMapsClient = require("../googleMaps/gmapsclient");
 
 // SEE PROFILE
 router.get("/", (req, res, next) => {
-  Center.findOne({"admin_id": req.user.id}).then(center => {
-    console.log(center)
-    res.render("user/profile", { user: req.user, center });
-  });
+  Center.findOne({"admin_id": req.user.id}).then(center => res.render("user/profile", { user: req.user, center }))
 });
 
 
