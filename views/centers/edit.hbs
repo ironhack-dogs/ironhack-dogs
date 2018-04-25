@@ -1,11 +1,17 @@
-<div class="container">
-  <div class="row">
+<section class="center-small-banner">
+  <div class="center-title">
+    Estás editando {{center.name}}
   </div>
+</section>
+
+<section class="white-section padding56">
+<div class="container">
+
+  <div class="column2 padding form-container">
   {{#if message}}
   <div class="error-message">{{ message }}</div>
   {{/if}}
-  <div>
-    <div class="col-sm-6 centered-form">
+  
       <form action="/centers/{{center.id}}/edit" method="post">
         <div class="form-group">
           <label for="name">Nombre del centro</label>
@@ -24,11 +30,11 @@
           <input type="text" name="website_url" class="form-control" value="{{center.website_url}}">
         </div>
                 <div class="form-group">
-          <label for="description">Descripción</label>
-          <input type="textarea" name="description" class="form-control" value="{{center.description}}">
+          <label for="description">Descripción</label> <br>
+          <textarea name="description" class="form-control">{{center.description}}</textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Aceptar Cambios</button>
+        <button type="submit">Aceptar Cambios</button>
       </form>
     </div>
   </div>
-</div>
+</section>

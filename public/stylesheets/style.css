@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   height: 70px;
-  background: rgba(26, 26, 26, 0.9);
+  background: rgba(26, 26, 26, 0.8);
   z-index: 10;
   color: white; }
   .nav .navbar-text {
@@ -27,7 +27,7 @@
 
 footer {
   width: 100%;
-  height: 70px;
+  height: 20px;
   background-color: black;
   color: white;
   text-align: center; }
@@ -64,11 +64,13 @@ section {
   background-size: cover; }
 
 .column1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   box-sizing: border-box;
   width: 98%;
-  min-width: 800px;
   height: 100px;
-  margin: 10px 10px; }
+  margin: 0 auto; }
 
 .grey-section {
   background-color: #EFEFEF; }
@@ -218,11 +220,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 11pt; }
 
-footer {
-  width: 100%;
-  height: 150px;
-  background-color: black; }
-
 p {
   font-size: 11pt;
   line-height: 16pt; }
@@ -245,15 +242,6 @@ section {
   margin: 0 auto;
   height: 100%;
   vertical-align: middle; }
-
-.nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  background: rgba(58, 58, 58, 0.7);
-  z-index: 10;
-  color: white; }
 
 .menu {
   box-sizing: border-box;
@@ -294,14 +282,6 @@ section {
   margin: 10px 10px;
   padding: 10px;
   background-size: cover; }
-
-.column1 {
-  box-sizing: border-box;
-  width: 98%;
-  min-width: 800px;
-  height: 100px;
-  background-color: salmon;
-  margin: 10px 10px; }
 
 .grey-section {
   background-color: #EFEFEF; }
@@ -379,6 +359,12 @@ h3 {
 
 table {
   margin: 20px 0; }
+  table a {
+    color: black;
+    text-decoration: none; }
+  table span a {
+    text-decoration: none;
+    color: white; }
 
 td {
   padding: 4px;
@@ -431,6 +417,38 @@ td:nth-child(odd) {
   border: none;
   background: #f1f1f1;
   font-size: 16pt; }
+
+.form-container textarea {
+  padding: 15px;
+  font-size: 12pt;
+  width: 100%;
+  min-height: 120px;
+  border: none;
+  background-color: #f1f1f1; }
+
+.form-container button {
+  font-size: 12pt;
+  margin-top: 24px;
+  padding: 24px 20px;
+  border: none;
+  background-color: #84e684;
+  color: white; }
+
+.user-small-banner {
+  box-sizing: border-box;
+  background-image: url("https://res.cloudinary.com/abdaio/image/upload/c_scale,w_1965/v1524605336/sam-manns-399879-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  padding-top: 120px;
+  text-align: center; }
+
+.user-title {
+  font-weight: 300;
+  color: white;
+  font-size: 28pt;
+  position: relative; }
 
 body {
   margin: 0;
@@ -511,5 +529,14 @@ td:nth-child(odd) {
   width: 230px;
   border-radius: 50%;
   border: 5px solid #FFAD02; }
+
+.color-danger {
+  background-color: #db4545; }
+
+.color-success {
+  background-color: #67df6d; }
+
+.color-primary {
+  background-color: #67a5df; }
 
 /*# sourceMappingURL=style.css.map */

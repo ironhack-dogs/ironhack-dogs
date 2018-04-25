@@ -3,15 +3,21 @@ const router = express.Router();
 const User = require("../models/User");
 const Dog = require("../models/Dog");
 const Request = require("../models/Request");
-
+const moment = require("moment");
+moment.locale('es');
 /* GET home page */
 router.get("/", (req, res, next) => {
+
    Dog.count().exec(function (err, count) {
         var random = Math.floor(Math.random() * count)
         Dog.findOne().skip(random).exec()
-      .then(dogs => res.render("index", { user: req.user, title: "Madrid Adopta", dogs }))})})
-
-;
+      .then(dogs => 
+        
+        res.render("index", { user: req.user, title: "Madrid Adopta", dogs, dogAge:moment(dogs.birthday).fromNow(true) })
+      );
+    }
+  );
+});
 
 router.get("/become-admin", (req, res, next) => res.render("become-admin", req.user));
 

@@ -5,23 +5,30 @@
   </div>
 </section>
 
-<section class="white-section padding56">
-  <div class="container">
-  <div class="column2">
 
-  {{#each centers}}
-  <li><a href="/centers/{{this._id}}">{{this.name}}</a></li>
-<<<<<<< HEAD
-{{/each}}
-</div>
+<section class="white-section">
+  <div class="container padding56">
+    {{#each centerData}}
+      <div class="card">
+        <div class="picture" style="background-image:url('{{{this.logo_url}}}')"></div>
+        <a href="/centers/{{this._id}}">{{this.name}}</a>
+      </div>
+    {{/each}}
+  </div>    
 </div>
 </section>
-=======
-<<<<<<< HEAD
-{{/each}}
 
-<a href="/become-admin">Añadir mi centro al registro</a>
-=======
-{{/each}}
->>>>>>> abdallah
->>>>>>> master
+  <section class="ad-section ">
+    <div class="overlay">
+    <div class="padding56">
+        <span class="hero-title">¿Colaboras con<br>un centro de adopción?</span>
+    </div>
+    <div>
+      <a class="btn-primary" href="/become-admin">Registra tu centro en Madrid Adopta</a>
+    </div>
+  </div>
+  </section>
+
+
+
+

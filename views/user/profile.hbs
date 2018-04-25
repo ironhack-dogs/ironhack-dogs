@@ -1,17 +1,53 @@
-<h2>Hello {{user.username}}!</h2>
 
-{{#if center}}
 
-<p> {{center.name}}</p>
 
-<a href="centers/{{center.id}}/edit"> Edit my center</a>
+<section class="user-small-banner">
+  <div class="user-title">
+    ¡Hola, {{user.username}}!
+  </div>
+</section>
 
-<a href="centers/{{center.id}}/delete"> Delete my center</a>
+<section class="white-section">
+  <div class="container padding56">
+         
 
-{{/if}} 
+    <div class="column2">
+      Eres usuario desde el {{since}}
+      {{#if center}}
+       <h3>Actualmente, gestionas el siguiente centro:</h3>
+      <p>
+        <a href="/centers/{{center._id}}">{{center.name}}</a>
+        
+        </p>
+      <table>
+        <tr>
+          <td> <a href="/centers/{{center._id}}">{{center.name}}</a></td>
+          <td>
+             <span class="btn-primary color-success"><a href="/dogs/new"><i class="far fa-plus-square"></i>
 
-{{#if user.isAdmin}}
-<a href="/my-profile/create-center"> Dar de alta un centro</a>
+ Añadir mascota</a></span>
+            <span class="btn-primary"><a href="/centers/{{center._id}}/edit"><i class="far fa-edit"></i>
 
-<a href="/dogs/new">Registrar un perro</a>
-{{/if}}
+ Editar</a></span>
+            <span class="btn-primary color-danger"><a href="/centers/{{center._id}}/edit"><i class="far fa-trash-alt"></i>
+
+ Eliminar</a></span>
+          </td>
+          
+        </tr>
+      </table> 
+      
+
+    </div>
+
+
+
+
+    {{/if}} {{#if user.isAdmin}}
+    <a href="/my-profile/create-center"> Dar de alta un centro</a>
+
+    <a href="/dogs/new">Registrar un perro</a>
+    {{/if}}
+  </div>
+  </div>
+</section>
