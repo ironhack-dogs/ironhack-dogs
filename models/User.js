@@ -11,6 +11,7 @@ const UserSchema = Schema(
     surname: String,
     picture_url: String,
     isAdmin: { type: Boolean, default: false },
+    favorites: [{ type : Schema.Types.ObjectId, ref: 'Dog', default: [] }],
     role: {
       type: String,
       enum: ["User", "Admin", "Superadmin"],

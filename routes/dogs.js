@@ -3,8 +3,9 @@ const router = express.Router();
 const uploadCloud = require("../config/cloudinary.js");
 const Dog = require("../models/Dog");
 const Center = require("../models/Center");
+const User = require("../models/User");
 const moment = require("moment");
-const sendDateMail = require("../mail/sendDateMail")
+const sendDateMail = require("../mail/sendDateMail");
 
 // Create new dog
 router.get("/new", (req, res, next) => {
@@ -81,8 +82,8 @@ router.post("/edit/:id", (req, res, next) => {
 // Dog index and Dog profile
 router.get("/", (req, res, next) => {
   Dog.find().then(dogs => {
-    dogs.forEach((e,i) => {
-      moment.locale('es');
+    dogs.forEach((e, i) => {
+      moment.locale("es");
       e.relativeDate = moment(e.birthday).fromNow(true);
     });
     res.render("dogs/index", { user: req.user, dogs });
@@ -93,7 +94,7 @@ router.get("/:id", (req, res, next) => {
   Dog.findById(req.params.id)
     .populate("center")
     .then(dogData => {
-      moment.locale('es');
+      moment.locale("es");
       dogData.relativeDate = moment(dogData.birthday).fromNow(true);
       res.render("dogs/profile", { user: req.user, dogData });
     });
@@ -114,24 +115,30 @@ router.post("/search", (req, res, next) => {
 
 // Contact with the center of the dog
 router.get("/:id/contact", (req, res, next) => {
-  Dog.findById(req.params.id).populate("center").then(dog => {
-    res.render("dogs/contact", {user: req.user, dog: dog})
-  })
-  ;
-}) 
+  Dog.findById(req.params.id)
+    .populate("center")
+    .then(dog => {
+      res.render("dogs/contact", { user: req.user, dog: dog });
+    });
+});
 
 router.post("/:id/contact", (req, res, next) => {
-  const {subject, message, user} = req.body;
+  const { subject, message, user } = req.body;
   console.log(user);
   const user_email = req.user.email;
-  Dog.findById(req.params.id).populate("center").then(dog => {
-    const center_email = JSON.stringify(dog.center.email)
-    sendDateMail(center_email, user_email, subject, message, user)
-    res.redirect(`/dogs/${req.params.id}`)
-  })
-  
-})
+  Dog.findById(req.params.id)
+    .populate("center")
+    .then(dog => {
+      const center_email = JSON.stringify(dog.center.email);
+      sendDateMail(center_email, user_email, subject, message, user);
+      res.redirect(`/dogs/${req.params.id}`);
+    });
+});
 
-
+//Add dog to favorites
+router.get("/:id/favorite", (req, res, next) => {
+  User.findByIdAndUpdate(req.user.id, {$push: {favorites: req.params.id}})
+  .then(() => res.redirect(`/dogs/${req.params.id}`))
+});
 
 module.exports = router;
