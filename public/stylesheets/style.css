@@ -409,7 +409,7 @@ td:nth-child(odd) {
   font-size: 28pt;
   position: relative; }
 
-.form-container input[type=text], .form-container input[type=password] {
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=date], .form-container input[type=file], .form-container input[type=number] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -417,6 +417,15 @@ td:nth-child(odd) {
   border: none;
   background: #f1f1f1;
   font-size: 16pt; }
+
+.form-container select {
+  width: 100%;
+  font-size: 16pt;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1; }
 
 .form-container textarea {
   padding: 15px;
