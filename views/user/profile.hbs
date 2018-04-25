@@ -7,7 +7,6 @@
 <section class="white-section">
   <div class="container padding56">
 
-
     <div class="column2">
       Eres usuario desde el {{since}} {{#if center}}
       <h3>Actualmente, gestionas el siguiente centro:</h3>
@@ -43,11 +42,7 @@
 
         </tr>
       </table>
-
-
     </div>
-
-
 
 
     {{/if}} {{#if user.isAdmin}}
@@ -55,6 +50,32 @@
 
     <a href="/dogs/new">Registrar un perro</a>
     {{/if}}
+
+
+    <div class="container padding56">
+  <div class="dogs-title" id="favs">Mis perros favoritos</div>
+
+      {{#each dogs}}
+
+      <div class="card">
+        <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
+        <a href="/dogs/{{this._id}}">{{this.name}} </a>
+        <p>{{this.gender}} de {{this.relativeDate}}</p>
+
+        <div class="social">
+          <a href="#">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="whatsapp://send?text=¡Conoce a {{this.name}} en Madrid Adopta! http://www.madridadopta/dogs/{{this._id}}" data-action="share/whatsapp/share">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
   </div>
   </div>
 </section>
