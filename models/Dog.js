@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const DogSchema = Schema(
   {
-    reference_id: Number,
+    reference_id: String,
     center: {type : Schema.Types.ObjectId, ref: 'Center'},
     name: String,
     breed: String,

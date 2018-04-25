@@ -4,8 +4,6 @@ const Center = require("../models/Center");
 const Dog = require("../models/Dog");
 const isAdmin = require("../middleware/isAdmin");
 
-<<<<<<< HEAD
-=======
 // List all centers
 router.get("/", (req, res, next) => {
   Center.find().then(centerData => {
@@ -13,7 +11,6 @@ router.get("/", (req, res, next) => {
   
   });
 });
->>>>>>> master
 
 // Show one center
 // router.get("/:id", (req, res, next) => {
