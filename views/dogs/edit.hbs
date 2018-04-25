@@ -1,5 +1,14 @@
-<div class="container-fluid">
-  <div class="col-md-3">
+<section class="dogs-banner">
+  <div class="dogs-title">
+   Editando la ficha de {{dogData.name}}
+  </div>
+</section>
+
+<section class="white-section padding56">
+<div class="container">
+
+    <div class="column2 padding form-container">
+
     <form action="/dogs/edit/{{dogData._id}}" method="POST">
 
       <div class="form-group">
@@ -62,7 +71,7 @@
         <textarea class="form-control" id="description" name="description">{{dogData.description}} </textarea>
       </div>
 
-      <div class="form-group">
+      {{!-- <div class="form-group">
         <label for="gendre">¿Requiere permiso PPP?</label>
 
         <div class="form-check form-check-inline">
@@ -74,7 +83,7 @@
         </div>
         <small id="permisoHelp" class="form-text text-muted">Algunos animales requieren un permiso de Perro Potencialmente Peligroso.</small>
 
-      </div>
+      </div> --}}
 
       <div class="form-group">
         <label for="dogName">Sube una foto:</label>
@@ -89,7 +98,13 @@
     </form>
 
   </div>
+  <div class="column2 padding form-container">
+      <button type="submit" class=" color-danger">Eliminar esta mascota</button>
+  </div>
+</div>
 
+
+</section>
 
 </div>
 
