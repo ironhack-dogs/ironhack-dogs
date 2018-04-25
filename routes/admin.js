@@ -15,7 +15,6 @@ router.get("/", isSuperAdmin(), (req, res, next) => {
 });
 
 
-<<<<<<< HEAD
 // Aceptar solicitud para convertirse en Admin
 router.get("/:id/accept", isSuperAdmin(), (req, res, next) => {
   Request.findByIdAndUpdate(req.params.id, { status: "Accepted" })
@@ -29,8 +28,6 @@ router.get("/:id/accept", isSuperAdmin(), (req, res, next) => {
     .catch(e => next(e));
   })
   .catch(e => next(e));
-=======
->>>>>>> abdallah
 });
 
 // Rechazar solicitud para convertirse en Admin
@@ -45,8 +42,4 @@ router.get("/:id/deny", isSuperAdmin(), (req, res, next) => {
   })
 });
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> abdallah
