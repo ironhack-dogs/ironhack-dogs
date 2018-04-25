@@ -6,7 +6,6 @@ const Center = require("../models/Center");
 const moment = require("moment");
 
 // Create new dog
-
 router.get("/new", (req, res, next) => {
   Center.findOne({ admin_id: req.user.id }).then(centerData => {
     res.render("dogs/new", { user: req.user, centerData });
@@ -45,7 +44,6 @@ router.post("/new", uploadCloud.single("picture-url"), (req, res, next) => {
 });
 
 // Edit dog
-
 router.get("/edit/:id", (req, res, next) => {
   Dog.findById(req.params.id).then(dogData => {
     dogData.formatedDate = moment(dogData.birthday).format("YYYY-MM-DD");
@@ -80,7 +78,6 @@ router.post("/edit/:id", (req, res, next) => {
 });
 
 // Dog index and Dog profile
-
 router.get("/", (req, res, next) => {
   Dog.find().then(dogs => {
     dogs.forEach((e,i) => {
@@ -113,5 +110,15 @@ router.post("/search", (req, res, next) => {
     });
   }
 });
+
+// Contact with the center of the dog
+router.get(":id/contact", (req, res, next) => {
+  Dog.findById(req.params.id).populate("center").then(dog => {
+    res.render("dogs/contact")
+  })
+  ;
+})  
+
+
 
 module.exports = router;

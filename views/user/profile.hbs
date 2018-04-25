@@ -1,6 +1,3 @@
-
-
-
 <section class="user-small-banner">
   <div class="user-title">
     ¡Hola, {{user.username}}!
@@ -9,34 +6,44 @@
 
 <section class="white-section">
   <div class="container padding56">
-         
+
 
     <div class="column2">
-      Eres usuario desde el {{since}}
-      {{#if center}}
-       <h3>Actualmente, gestionas el siguiente centro:</h3>
+      Eres usuario desde el {{since}} {{#if center}}
+      <h3>Actualmente, gestionas el siguiente centro:</h3>
       <p>
         <a href="/centers/{{center._id}}">{{center.name}}</a>
-        
-        </p>
+
+      </p>
       <table>
         <tr>
-          <td> <a href="/centers/{{center._id}}">{{center.name}}</a></td>
           <td>
-             <span class="btn-primary color-success"><a href="/dogs/new"><i class="far fa-plus-square"></i>
-
- Añadir mascota</a></span>
-            <span class="btn-primary"><a href="/centers/{{center._id}}/edit"><i class="far fa-edit"></i>
-
- Editar</a></span>
-            <span class="btn-primary color-danger"><a href="/centers/{{center._id}}/edit"><i class="far fa-trash-alt"></i>
-
- Eliminar</a></span>
+            <a href="/centers/{{center._id}}">{{center.name}}</a>
           </td>
-          
+          <td>
+            <span class="btn-primary color-success">
+              <a href="/dogs/new">
+                <i class="far fa-plus-square"></i>
+
+                Añadir mascota</a>
+            </span>
+            <span class="btn-primary">
+              <a href="/centers/{{center._id}}/edit">
+                <i class="far fa-edit"></i>
+
+                Editar</a>
+            </span>
+            <span class="btn-primary color-danger">
+              <a href="/centers/{{center._id}}/edit">
+                <i class="far fa-trash-alt"></i>
+
+                Eliminar</a>
+            </span>
+          </td>
+
         </tr>
-      </table> 
-      
+      </table>
+
 
     </div>
 
