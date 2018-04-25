@@ -114,7 +114,7 @@ router.post("/search", (req, res, next) => {
 // Contact with the center of the dog
 router.get("/:id/contact", (req, res, next) => {
   Dog.findById(req.params.id).populate("center").then(dog => {
-    res.render("dogs/contact", {dog})
+    res.render("dogs/contact", {user: req.user, dog: dog})
   })
   ;
 })  
