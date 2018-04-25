@@ -5,44 +5,52 @@
   </div>
 </section>
 
-<section class="grey-section padding56">
-    <div class="container">
-     <div class="column2">
-        <h3>Te presentamos a <b class="accent">{{dogData.name}}</b></h3>
-        <p>{{dogData.description}}</p>
-        <table>
-          <tr>
-            <td>Edad</td>
-            <td>{{dogData.relativeDate}}</td>
-          </tr>
-          <tr>
-              <td>Sexo</td>
-              <td>{{dogData.gender}}</td>
-            </tr>
-            <tr>
-                <td>Color</td>
-                <td>{{dogData.color}}</td>
-              </tr>
-              <tr>
-                  <td>Tamaño</td>
-                  <td>{{dogData.size}}</td>
-              </tr>
-              <tr>
-                  <td>Referencia</td>
-                  <td>{{dogData.reference_id}}</td>
-              </tr>
-              <tr>
-                  <td><a href="/dogs/{{dogData.id}}/favorite">Añadir a mis favoritos</a></td>
-              </tr>
-              <tr>
-                  <td><a href="/dogs/{{dogData.id}}/contact">Contacta con su centro!</a></td>
-              </tr>
-        </table>
+
+<div style="background-image:url('{{dogData.picture_url}}')" class="img-round-profile center"></div>
+
+<section class="grey-section">
+  <div class="container">
+    <div class="column2 panel">
+      <h3>Te presentamos a
+        <b class="accent">{{dogData.name}}</b>
+      </h3>
+
+      {{dogData.description}}
     </div>
-    <div class="column2 ">
-      <div class="img-round center" style="background-image:url('{{dogData.picture_url}}')"></div></div>
+    <div class="column3 panel">
+      <h3>Información</h3>
+      <table>
+        <tr>
+          <td>Edad</td>
+          <td>{{dogData.relativeDate}}</td>
+        </tr>
+        <tr>
+          <td>Sexo</td>
+          <td>{{dogData.gender}}</td>
+        </tr>
+        <tr>
+          <td>Color</td>
+          <td>{{dogData.color}}</td>
+        </tr>
+        <tr>
+          <td>Tamaño</td>
+          <td>{{dogData.size}}</td>
+        </tr>
+        <tr>
+          <td>Referencia</td>
+          <td>{{dogData.reference_id}}</td>
+        </tr>
+
+      </table>
     </div>
-  </section>
+    <div class="column3 panel">
+         <h3>Información</h3>
+    <a class="megabutton color-primary" href="/dogs/{{dogData.id}}/favorite"><i class="fas fa-heart"></i><br>Añadir a mis favoritos</a>
+    <a class="megabutton color-success" href="/dogs/{{dogData.id}}/contact"><i class="fas fa-envelope"></i><br>Solicitar información </a>      
+    </div>
+
+</section>
 
 
-<a href="/dogs/">< Volver </a>
+<a href="/dogs/">
+  < Volver </a>

@@ -142,3 +142,13 @@ router.get("/:id/favorite", (req, res, next) => {
 });
 
 module.exports = router;
+
+
+//Add dog to favorites
+router.get("/:id/removefav", (req, res, next) => {
+  User.findByIdAndUpdate(req.user.id, {$pull: {favorites: req.params.id}})
+  .then(() => res.redirect(`/dogs/${req.params.id}`))
+});
+
+module.exports = router;
+

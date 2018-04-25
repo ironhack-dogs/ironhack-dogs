@@ -86,6 +86,15 @@ h3 {
   text-decoration: none;
 }
 
+.btn-blue {
+  padding: 8px 14px;
+  background-color: rgb(37, 102, 163);
+  border-radius: 30px;
+  font-size: 10pt;
+  color: white;
+  text-decoration: none;
+}
+
 // TABLES
 
 table {
@@ -112,6 +121,29 @@ td:nth-child(odd) {
   width: 230px;
   border-radius: 50%;
   border: 5px solid #FFAD02;
+ 
+}
+
+.img-polaroid {
+  margin-top: 30px;
+  background-size: cover;
+  height: 430px;
+  width: 430px;
+  border: 6px solid white;
+  box-shadow: grey 0 0 5px;
+ 
+}
+
+.img-round-profile {
+  
+  background-size: cover;
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  border: 5px solid #FFAD02;
+  position: relative; 
+  top: -90px; 
+  margin-bottom: -60px;
 }
 
 // COLORS

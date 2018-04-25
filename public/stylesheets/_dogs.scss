@@ -49,6 +49,7 @@
 }
 
 .card {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s;
   background-color:white;
   height: 360px;
   margin: 0px 10px 70px 10px;
@@ -56,6 +57,7 @@
   text-align: center;
   border-radius:  5px 5px 6px 6px;
   box-shadow: 0 1px 5px grey;
+  top:0px;
   .picture {
     background-size: cover;
     height: 170px;
@@ -75,6 +77,14 @@
   }
   
 }
+
+.card:hover{
+  box-shadow: 0 4px 5px grey;
+  position: relative;
+  top: -5px;
+}
+
+
 
 .social {
   padding-top: 24px;
