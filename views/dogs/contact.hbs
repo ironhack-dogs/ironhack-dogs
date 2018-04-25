@@ -1,0 +1,43 @@
+<section class="center-small-banner">
+  <div class="center-title">
+    Contactar con el centro de {{dog.name}}
+  </div>
+</section>
+
+<section class="white-section padding56">
+  <div class="container">
+    {{#if failure}}
+    <div>
+      <p>{{failure.message}}</p>
+      <p>Necesitas estás conectado para dar de alta tu centro de adopción. Puedes hacerlo desde
+        <a href="/login">aquí</a>
+      </p>
+    </div>
+    {{/if}} {{#if success}}
+    <p>{{success.message}}</p>
+    {{/if}}
+
+  <div class="column2 padding form-container">
+
+    <form action="/become-admin" method="post">
+  <label for="subject">Asunto</label>
+  <input type="text" name="subject" value="Solicitud de registro de un nuevo centro">
+  <br>
+  <label for="user">Nombre de usuario</label>
+  <input type="text" name="user">
+  <br>
+
+  <label for="center-name">Nombre del centro</label>
+  <input type="text" name="center-name" value="{{dog.center.name}}">
+
+  <label for="message">Mensaje</label><br>
+  <textarea type="textarea" name="message" id=""></textarea>
+    <br>
+  <button  type="submit">Enviar</button>
+</form>
+</div>
+  </div>
+</section>
+
+
+
