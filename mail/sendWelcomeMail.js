@@ -1,8 +1,8 @@
 const transporter = require("./transporter");
 const path = require("path");
 
-const sendAwesomeMail = (to, from = "admin@madrid.com") => {
-  transporter.sendWelcomeMail({
+const sendWelcomeMail = (to, from = "admin@madrid.com") => {
+  transporter.sendMail({
     to,
     from,
     subject: "Bienvenido a Madrid Adopta",
@@ -23,4 +23,4 @@ const sendAwesomeMail = (to, from = "admin@madrid.com") => {
     </body>`
   });
 };
-module.exports = sendAwesomeMail;
+module.exports = sendWelcomeMail;

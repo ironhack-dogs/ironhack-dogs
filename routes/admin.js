@@ -18,10 +18,9 @@ router.get("/", isSuperAdmin(), (req, res, next) => {
 // Aceptar solicitud para convertirse en Admin
 router.get("/:id/accept", isSuperAdmin(), (req, res, next) => {
   Request.findByIdAndUpdate(req.params.id, { status: "Accepted" })
-    .then(request => {
-      User.findByIdAndUpdate(request.user, { role: "Admin", isAdmin: "true" })
+    .then(req => {
+      User.findByIdAndUpdate(req.user, { role: "Admin", isAdmin: "true" })
         .then(user => {
-          console.log(user.email);
           sendWelcomeMail(user.email);
           res.redirect("/admin");
         })
@@ -32,12 +31,13 @@ router.get("/:id/accept", isSuperAdmin(), (req, res, next) => {
 
 // Rechazar solicitud para convertirse en Admin
 router.get("/:id/deny", isSuperAdmin(), (req, res, next) => {
-  Request.findById(req.params.id).then(request => {
-    User.findById(request.user).then(user => {
+  Request.findByIdAndUpdate(req.params.id, {status: "Denied"})
+  .then(request => {
+    User.findById(req.user).then(user => {
       sendDenyMail(user.email);
       res.redirect("/admin");
     });
-  });
+  }).catch(e => next(e));
 });
 
 module.exports = router;

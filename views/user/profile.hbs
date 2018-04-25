@@ -10,10 +10,6 @@
     <div class="column2">
       Eres usuario desde el {{since}} {{#if center}}
       <h3>Actualmente, gestionas el siguiente centro:</h3>
-      <p>
-        <a href="/centers/{{center._id}}">{{center.name}}</a>
-
-      </p>
       <table>
         <tr>
           <td>
@@ -32,14 +28,18 @@
 
                 Editar</a>
             </span>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
             <span class="btn-primary color-danger">
-              <a href="/centers/{{center._id}}/edit">
+              <a href="/centers/{{center._id}}/delete">
                 <i class="far fa-trash-alt"></i>
 
-                Eliminar</a>
+                Eliminar Centro</a>
             </span>
           </td>
-
         </tr>
       </table>
     </div>
@@ -53,7 +53,7 @@
 
 
     <div class="container padding56">
-  <div class="dogs-title" id="favs">Mis perros favoritos</div>
+      <div class="dogs-title" id="favs">Mis perros favoritos</div>
 
       {{#each dogs}}
 
