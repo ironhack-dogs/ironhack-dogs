@@ -4,6 +4,7 @@
 @import "landing";
 @import "centers";
 @import "forms";
+@import "user";
 
 body {
   margin: 0;
@@ -111,4 +112,19 @@ td:nth-child(odd) {
   width: 230px;
   border-radius: 50%;
   border: 5px solid #FFAD02;
+}
+
+// COLORS
+
+
+.color-danger {
+  background-color:#db4545;
+}
+
+.color-success {
+  background-color:#67df6d;
+}
+
+.color-primary {
+  background-color:#67a5df;
 }

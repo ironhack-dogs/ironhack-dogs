@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const Center = require("../models/Center");
+const moment = require("moment");
 const googleMapsClient = require("../googleMaps/gmapsclient");
 
 
 // SEE PROFILE
 router.get("/", (req, res, next) => {
-  Center.findOne({"admin_id": req.user.id}).then(center => res.render("user/profile", { user: req.user, center }))
+  moment.locale('es');
+  Center.findOne({"admin_id": req.user.id})
+  .then(center => res.render("user/profile", { user: req.user, center, since: moment(req.user.created_at).format('LL') }));
 });
 
 

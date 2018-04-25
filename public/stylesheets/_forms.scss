@@ -29,5 +29,23 @@
       font-size: 16pt;
 
   }
+
+  textarea{
+    padding:15px;
+    font-size: 12pt;
+    width: 100%;
+    min-height: 120px;
+    border: none;
+    background-color: #f1f1f1;
+  }
+
+  button {
+    font-size: 12pt;
+    margin-top: 24px;
+    padding: 24px 20px;
+    border: none;
+    background-color: #84e684;
+    color: white;
+  }
 }
 

@@ -1,0 +1,20 @@
+// INDEX
+
+.user-small-banner {
+  box-sizing: border-box;
+  background-image: url('https://res.cloudinary.com/abdaio/image/upload/c_scale,w_1965/v1524605336/sam-manns-399879-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 100%;
+  padding-top: 120px;
+  
+  text-align: center;
+}
+
+.user-title {
+  font-weight: 300;
+  color: white;
+  font-size: 28pt;
+  position: relative;
+}

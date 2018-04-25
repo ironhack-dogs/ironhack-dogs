@@ -16,10 +16,6 @@ module.exports = [
   {
     name: "Centro Ironhack de Mascotas",
     admin_id: "",
-<<<<<<< HEAD
-=======
-    authorized: false,
->>>>>>> abdallah
     location: { type: "Point", coordinates: [40.34943, -3.762879] },
     phone: "913448787",
     email: "centroprueba@prueba.com",
