@@ -28,7 +28,7 @@ router.get("/signup", ensureLoggedOut(), (req, res) => {
 
 // POST signup
 router.post("/signup", ensureLoggedOut(), (req, res, next) => {
-  const { username, email, password, telephoneNumber } = req.body;
+  const { username, email, password, name, surname } = req.body;
   if (username === "" || email === "" || password === "") {
     res.render("authentication/signup", {
       message: "can't leave fields empty"
@@ -45,8 +45,9 @@ router.post("/signup", ensureLoggedOut(), (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, bcryptSalt);
     const newUser = new User({
       username,
+      name,
+      surname,
       email,
-      telephoneNumber,
       password: hashPass
     });
 
