@@ -1,5 +1,7 @@
+const transporter = require("./transporter");
+
 const sendDenyMail = (to, from = "admin@madrid.com") => {
-  transporter.sendDenyMail({
+  transporter.sendMail({
     to,
     from,
     subject: "Bienvenido a Madrid Adopta",

@@ -2,7 +2,6 @@ const transporter = require("./transporter");
 const path = require("path");
 
 const sendDateMail = (to, from, subject, message, user) => {
-  console.log(to, from, subject, message, user)
   transporter.sendMail({
     to,
     from,
