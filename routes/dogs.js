@@ -4,6 +4,7 @@ const uploadCloud = require("../config/cloudinary.js");
 const Dog = require("../models/Dog");
 const Center = require("../models/Center");
 const moment = require("moment");
+const sendDateMail = require("../mail/sendDateMail")
 
 // Create new dog
 router.get("/new", (req, res, next) => {
@@ -117,7 +118,19 @@ router.get("/:id/contact", (req, res, next) => {
     res.render("dogs/contact", {user: req.user, dog: dog})
   })
   ;
-})  
+}) 
+
+router.post("/:id/contact", (req, res, next) => {
+  const {subject, message, user} = req.body;
+  console.log(user);
+  const user_email = req.user.email;
+  Dog.findById(req.params.id).populate("center").then(dog => {
+    const center_email = JSON.stringify(dog.center.email)
+    sendDateMail(center_email, user_email, subject, message, user)
+    res.redirect(`/dogs/${req.params.id}`)
+  })
+  
+})
 
 
 

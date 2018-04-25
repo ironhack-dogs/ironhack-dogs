@@ -7,31 +7,24 @@
 <section class="white-section padding56">
   <div class="container">
 
-  <div class="column2 padding form-container">
+    <div class="column2 padding form-container">
 
-    <form action="/become-admin" method="post">
-  <label for="subject">Asunto</label>
-  <input type="text" name="subject" value="Cita con {{dog.name}}"
-  <br>
-  <label for="user">Nombre de usuario</label>
-  <input type="text" name="user" value="{{user.name}}">
-  <br>
+      <form action="/dogs/{{dog.id}}/contact" method="post">
+        <label for="user">De</label>
+        <input type="text" name="user" value="{{user.name}} {{user.surname}}">
+        <br>
 
-    <label for="user">Email</label>
-  <input type="text" name="email" value="{{user.email}}">
-  <br>
+        <label for="center-name">Para</label>
+        <input type="text" name="center-name" value="{{dog.center.name}}" disabled>
+        <label for="subject">Asunto</label>
+        <input type="text" name="subject" value="Cita con {{dog.name}}" <br>
 
-  <label for="center-name">Nombre del centro</label>
-  <input type="text" name="center-name" value="{{dog.center.name}}">
-
-  <label for="message">Mensaje</label><br>
-  <textarea type="textarea" name="message" value="Hola, me llamo {{req.user.username}}"></textarea>
-    <br>
-  <button  type="submit">Enviar</button>
-</form>
-</div>
+        <label for="message">Mensaje</label>
+        <br>
+        <textarea type="textarea" name="message" placeholder="Hola, me llamo {{user.username}}, y estaría interesado en conocer a {{dog.name}} el día..."></textarea>
+        <br>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   </div>
 </section>
-
-
-

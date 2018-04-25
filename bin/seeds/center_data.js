@@ -1,10 +1,10 @@
 module.exports = [
   {
     name: "Centro de Adopción Alba",
-    admin_id: "",
+    admin_id: "5ae06d48ad9ec476ca0c020e",
     location: { type: "Point", coordinates: [40.37943, -3.732879] },
     phone: "919003232",
-    email: "centroprueba@prueba.com",
+    email: "alvarotrancon@gmail.com",
     website_url: "https://www.centroprueba.com",
     facebook_url: "https://www.facebook.com/",
     twitter_handle: 'albaadopcion',
@@ -15,10 +15,10 @@ module.exports = [
   },
   {
     name: "Centro Ironhack de Mascotas",
-    admin_id: "",
+    admin_id: "5ae06d48ad9ec476ca0c020d",
     location: { type: "Point", coordinates: [40.34943, -3.762879] },
     phone: "913448787",
-    email: "centroprueba@prueba.com",
+    email: "alvarotrancon@gmail.com",
     website_url: "https://www.centroprueba.com",
     facebook_url: "https://www.facebook.com/",
     twitter_handle: 'IronhackDogs',

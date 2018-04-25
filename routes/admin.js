@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 const Request = require("../models/Request");
 const isSuperAdmin = require("../middleware/isSuperadmin");
-const sendMail = require("../mail/sendMail")
+const sendWelcomeMail = require("../mail/sendWelcomeMail")
 
 router.get("/", isSuperAdmin(), (req, res, next) => {
   Request.find()
@@ -22,7 +22,7 @@ router.get("/:id/accept", isSuperAdmin(), (req, res, next) => {
     User.findByIdAndUpdate(request.user, { role: "Admin", isAdmin: "true" })
     .then(user => {
       console.log(user.email)
-      sendMail(user.email);
+      sendWelcomeMail(user.email);
       res.redirect("/admin")   
     })
     .catch(e => next(e));
@@ -36,7 +36,7 @@ router.get("/:id/deny", isSuperAdmin(), (req, res, next) => {
   .then(request => {
     User.findById(request.user)
     .then(user => {
-      sendMail(user.email);
+      sendWelcomeMail(user.email);
       res.redirect("/admin")
     })
   })

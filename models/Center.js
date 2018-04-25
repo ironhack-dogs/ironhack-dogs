@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const CenterSchema = Schema(
   {
     name: String,
-    admin_id: String,
+    admin_id: {type : Schema.Types.ObjectId, ref: 'User'},
     address:String,
     location: { type: { type: String }, coordinates: [Number] },
     phone: String,
