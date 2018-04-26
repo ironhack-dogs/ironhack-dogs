@@ -12,7 +12,7 @@ router.get("/", isSuperAdmin(), (req, res, next) => {
     .populate("user",["name", "email"])
     .then(requests => {
       requests.forEach(r => {
-        r.created = moment(r.created_at).format('DD MMMM YYYY, h:mm:ss');
+        r.created = moment(r.created_at).format('DD MMMM YYYY, h:mm:ss -a');
       })
       res.render("admin/index", { user: req.user, requests });
     })
