@@ -155,7 +155,7 @@ router.get("/:id/favorite", (req, res, next) => {
   }).then(() => res.redirect(`/dogs/${req.params.id}`));
 });
 
-//Add dog to favorites
+//Remove dog from favorites
 router.get("/:id/removefav", (req, res, next) => {
   User.findByIdAndUpdate(req.user.id, {
     $pull: { favorites: req.params.id }
