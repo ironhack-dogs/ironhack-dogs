@@ -3,6 +3,7 @@ const router = express.Router();
 const Center = require("../models/Center");
 const Dog = require("../models/Dog");
 const isAdmin = require("../middleware/isAdmin");
+const moment = require("moment")
 
 // List all centers
 router.get("/", (req, res, next) => {
@@ -13,8 +14,12 @@ router.get("/", (req, res, next) => {
 
 router.get("/:id", (req, res, next) => {
   Center.findById(req.params.id).then(centerData => {
-    Dog.find({ center: centerData._id }).then(dogData => {
-      res.render("centers/profile", { user: req.user, centerData, dogData });
+    Dog.find({ center: centerData._id }).then(dogs => {
+      dogs.forEach((e, i) => {
+      moment.locale("es");
+      e.relativeDate = moment(e.birthday).fromNow(true);
+    });
+    res.render("dogs/index", { user: req.user, dogs });
     });
   });
 });
