@@ -93,12 +93,25 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/:id", (req, res, next) => {
+  let notFav = true;
   Dog.findById(req.params.id)
     .populate("center")
     .then(dogData => {
       moment.locale("es");
       dogData.relativeDate = moment(dogData.birthday).fromNow(true);
-      res.render("dogs/profile", { user: req.user, dogData });
+      if (req.user) {
+        User.findById(req.user.id)
+          .then(user => {
+            user.favorites.forEach(f => {
+              if (f == req.params.id) {notFav = false}
+            })
+          })
+          .then(() => {
+            res.render("dogs/profile", { user: req.user, dogData, notFav});
+          });
+      } else {
+        res.render("dogs/profile", { dogData });
+      }
     });
 });
 
@@ -133,32 +146,30 @@ router.get("/:id/contact", (req, res, next) => {
 });
 
 router.post("/:id/contact", (req, res, next) => {
-  const { subject, message, user } = req.body;
-  console.log(user);
-  const user_email = req.user.email;
+  const { subject, message, email } = req.body;
+  const user_email = email;
+  console.log(user_email);
   Dog.findById(req.params.id)
     .populate("center")
     .then(dog => {
       const center_email = JSON.stringify(dog.center.email);
-      sendDateMail(center_email, user_email, subject, message, user);
+      sendDateMail(center_email, user_email, subject, message);
       res.redirect(`/dogs/${req.params.id}`);
     });
 });
 
 //Add dog to favorites
 router.get("/:id/favorite", (req, res, next) => {
-  User.findByIdAndUpdate(req.user.id, {$push: {favorites: req.params.id}})
-  .then(() => res.redirect(`/dogs/${req.params.id}`))
+  User.findByIdAndUpdate(req.user.id, {
+    $push: { favorites: req.params.id }
+  }).then(() => res.redirect(`/dogs/${req.params.id}`));
 });
 
-module.exports = router;
-
-
-//Add dog to favorites
+//Remove dog from favorites
 router.get("/:id/removefav", (req, res, next) => {
-  User.findByIdAndUpdate(req.user.id, {$pull: {favorites: req.params.id}})
-  .then(() => res.redirect(`/dogs/${req.params.id}`))
+  User.findByIdAndUpdate(req.user.id, {
+    $pull: { favorites: req.params.id }
+  }).then(() => res.redirect(`/dogs/${req.params.id}`));
 });
 
 module.exports = router;
-

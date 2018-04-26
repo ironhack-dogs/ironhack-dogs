@@ -11,8 +11,11 @@ router.get("/", (req, res, next) => {
   Center.findOne({ admin_id: req.user.id }).then(center => {
     User.findById(req.user.id)
       .populate("favorites")
-      .then((user) => {
-        console.log(user.favorites)
+      .then(user => {
+        user.favorites.forEach(e => {
+          moment.locale("es");
+          e.relativeDate = moment(e.birthday).fromNow(true);
+        });
         res.render("user/profile", {
           user: req.user,
           dogs: user.favorites,

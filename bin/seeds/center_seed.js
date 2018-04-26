@@ -2,9 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const Center = require("../../models/Center");
 const center_data = require("./center_data");
-const dbURL = "mongodb://localhost/madridadopta";
-
-mongoose.connect(dbURL).then (() => {
+mongoose.connect("mongodb://Madridadopta:1234@ds014808.mlab.com:14808/madrid-adopta").then (() => {
   Center.collection.drop();
   
   Center.create(center_data)
