@@ -98,12 +98,17 @@ router.get("/:id", (req, res, next) => {
       moment.locale("es");
       dogData.relativeDate = moment(dogData.birthday).fromNow(true);
       if (req.user) {
-        User.findById(req.user.id).then(user => {
-          user.favorites.some(f => {
-            console.log(f)
-            return f = req.params.id
-          }).then(() => res.render())
-        });
+        User.findById(req.user.id)
+          .then(user => {
+            user.favorites.forEach(f => {
+              if (f == req.params.id) {notFav = false}
+            })
+          })
+          .then(() => {
+            res.render("dogs/profile", { user: req.user, dogData, notFav});
+          });
+      } else {
+        res.render("dogs/profile", { dogData });
       }
     });
 });
