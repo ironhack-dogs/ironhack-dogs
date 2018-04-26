@@ -91,13 +91,20 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/:id", (req, res, next) => {
+  let notFav = true;
   Dog.findById(req.params.id)
     .populate("center")
     .then(dogData => {
-      console.log(dogData);
       moment.locale("es");
       dogData.relativeDate = moment(dogData.birthday).fromNow(true);
-      res.render("dogs/profile", { user: req.user, dogData });
+      if (req.user) {
+        User.findById(req.user.id).then(user => {
+          user.favorites.some(f => {
+            console.log(f)
+            return f = req.params.id
+          }).then(() => res.render())
+        });
+      }
     });
 });
 
