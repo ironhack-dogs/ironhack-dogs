@@ -4,13 +4,18 @@
   </div>
 </section>
 
+<section class="white-section padding56">
+  <div class="container">
 {{#each requests}}
-  <div>
-    <p>{{{username}}}</p>
-    <p>{{subject}}</p>
-    <p>{{message}}</p>
-    <p>{{status}}</p>
-  </div>
-    <a href="admin/{{this.id}}/accept" class="btn btn-large">Aceptar solicitud</a>
-    <a href="admin/{{this.id}}/deny" class="btn btn-large">Rechazar solicitud</a>
+<div class="card">
+  <p>{{{username}}}</p>
+  <p>{{subject}}</p>
+  <p>{{message}}</p>
+  <p>{{status}}</p>
+
+  <a href="admin/{{this.id}}/accept" class="megabutton color-success">Aceptar solicitud</a>
+  <a href="admin/{{this.id}}/deny" class="megabutton color-danger">Rechazar solicitud</a>
+</div>
 {{/each}}
+</div>
+</section>

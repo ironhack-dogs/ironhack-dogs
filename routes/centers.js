@@ -3,6 +3,8 @@ const router = express.Router();
 const Center = require("../models/Center");
 const Dog = require("../models/Dog");
 const isAdmin = require("../middleware/isAdmin");
+const moment = require("moment");
+const uploadCloud = require("../config/cloudinary.js");
 
 // List all centers
 router.get("/", (req, res, next) => {
@@ -14,7 +16,19 @@ router.get("/", (req, res, next) => {
 router.get("/:id", (req, res, next) => {
   Center.findById(req.params.id).then(centerData => {
     Dog.find({ center: centerData._id }).then(dogData => {
-      res.render("centers/profile", { user: req.user, centerData, dogData });
+      dogData.forEach(e => {
+        moment.locale("es");
+        e.relativeDate = moment(e.birthday).fromNow(true);
+        if (req.user && req.user.id == centerData.admin_id) {
+          e.isAdmin = true;
+        }
+      });
+      console.log("pollo");
+      res.render("centers/profile", {
+        user: req.user,
+        centerData,
+        dogData
+      });
     });
   });
 });
@@ -24,9 +38,10 @@ router.get("/:id/edit", isAdmin(), (req, res, next) => {
   res.render("centers/edit", { user: req.user, center: req.center });
 });
 
-router.post("/:id/edit", (req, res, next) => {
+router.post("/:id/edit", uploadCloud.single("banner"), (req, res, next) => {
   const { name, phone, email, website_url, description } = req.body;
-  const update = { name, phone, email, website_url, description };
+  const banner_url = req.file.url;
+  const update = { name, phone, email, website_url, description, banner_url };
   Center.findByIdAndUpdate(req.params.id, update)
     .then(() => res.redirect(`/centers/${req.params.id}`))
     .catch(e => next(e));

@@ -5,14 +5,14 @@
 </section>
 
 <section class="white-section padding56">
-<div class="container">
+  <div class="container">
 
-  <div class="column2 padding form-container">
-  {{#if message}}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-  
-      <form action="/centers/{{center.id}}/edit" method="post">
+    <div class="column2 padding form-container">
+      {{#if message}}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+
+      <form action="/centers/{{center.id}}/edit" method="post" enctype="multipart/form-data">
         <div class="form-group">
           <label for="name">Nombre del centro</label>
           <input type="text" name="name" class="form-control" value="{{center.name}}">
@@ -29,8 +29,14 @@
           <label for="website_url">Enlace a página</label>
           <input type="text" name="website_url" class="form-control" value="{{center.website_url}}">
         </div>
-                <div class="form-group">
-          <label for="description">Descripción</label> <br>
+        <div class="form-group">
+        <label for="banner">Sube tu banner personalizado</label>
+        <input type="file" class="form-control" name="banner" aria-describedby="banner">
+        <small class="form-text text-muted">Resolución recomendada: 900x300</small>
+      </div>
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <br>
           <textarea name="description" class="form-control">{{center.description}}</textarea>
         </div>
         <button type="submit">Aceptar Cambios</button>

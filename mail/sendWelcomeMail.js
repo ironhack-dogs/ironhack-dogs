@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const transporter = require("./transporter");
 const path = require("path");
 
@@ -14,7 +16,7 @@ const sendWelcomeMail = (to, from = "admin@madrid.com") => {
     <div id="content" style="max-width: 768px;height: 300px;margin: 0 auto;">
     <h1 style="text-align: center;font-weight: normal;color: #924992;">Bienvenido a Madrid Adopta</h1>
     <p>Tu solicitud ha sido procesada y has sido dado de alta, ya puedes crear tu centro haciendo click en
-      <a href="http://localhost:3000/my-profile" style="font-weight: normal;color: #924992;">este enlace</a>
+      <a href="${process.env.domainAddress}/my-profile" style="font-weight: normal;color: #924992;">este enlace</a>
     </p>
     </div>
     <footer style="background-color: black;color: white;text-align: center;height: 100px;line-height: 100px;">
