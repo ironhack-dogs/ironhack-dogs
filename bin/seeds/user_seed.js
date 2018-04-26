@@ -2,7 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const User = require("../../models/User");
 const user_data = require("./user_data");
-const dbURL = "mongodb://localhost/madridadopta";
+const dbURL = process.env.DBURL;
 
 mongoose.connect(dbURL).then (() => {
   User.collection.drop();

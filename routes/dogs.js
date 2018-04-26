@@ -126,7 +126,7 @@ router.get("/:id/contact", (req, res, next) => {
 router.post("/:id/contact", (req, res, next) => {
   const { subject, message, email } = req.body;
   const user_email = email;
-  console.log(user_email)
+  console.log(user_email);
   Dog.findById(req.params.id)
     .populate("center")
     .then(dog => {
@@ -138,18 +138,16 @@ router.post("/:id/contact", (req, res, next) => {
 
 //Add dog to favorites
 router.get("/:id/favorite", (req, res, next) => {
-  User.findByIdAndUpdate(req.user.id, {$push: {favorites: req.params.id}})
-  .then(() => res.redirect(`/dogs/${req.params.id}`))
+  User.findByIdAndUpdate(req.user.id, {
+    $push: { favorites: req.params.id }
+  }).then(() => res.redirect(`/dogs/${req.params.id}`));
 });
-
-module.exports = router;
-
 
 //Add dog to favorites
 router.get("/:id/removefav", (req, res, next) => {
-  User.findByIdAndUpdate(req.user.id, {$pull: {favorites: req.params.id}})
-  .then(() => res.redirect(`/dogs/${req.params.id}`))
+  User.findByIdAndUpdate(req.user.id, {
+    $pull: { favorites: req.params.id }
+  }).then(() => res.redirect(`/dogs/${req.params.id}`));
 });
 
 module.exports = router;
-

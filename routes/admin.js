@@ -31,13 +31,14 @@ router.get("/:id/accept", isSuperAdmin(), (req, res, next) => {
 
 // Rechazar solicitud para convertirse en Admin
 router.get("/:id/deny", isSuperAdmin(), (req, res, next) => {
-  Request.findByIdAndUpdate(req.params.id, {status: "Denied"})
-  .then(request => {
-    User.findById(req.user).then(user => {
-      sendDenyMail(user.email);
-      res.redirect("/admin");
-    });
-  }).catch(e => next(e));
+  Request.findByIdAndUpdate(req.params.id, { status: "Denied" })
+    .then(request => {
+      User.findById(req.user).then(user => {
+        sendDenyMail(user.email);
+        res.redirect("/admin");
+      });
+    })
+    .catch(e => next(e));
 });
 
 module.exports = router;
