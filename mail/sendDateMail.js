@@ -1,11 +1,11 @@
 const transporter = require("./transporter");
 const path = require("path");
 
-const sendDateMail = (to, from, subject, message, user) => {
+const sendDateMail = (to, from, subject, message) => {
+  console.log(to, from)
   transporter.sendMail({
     to,
     from,
-    user,
     subject,
     message,
     html:`<body style="font-family: 'Open Sans', sans-serif;font-size: 16px;">
@@ -14,7 +14,7 @@ const sendDateMail = (to, from, subject, message, user) => {
     <img src="http://res.cloudinary.com/dxsy5lr4t/image/upload/v1524590336/logo-text.png" alt="logo" id="imgtwo" style="display: block;padding: 50px;float: right;">
     </header>
     <div id="content" style="max-width: 768px;height: 300px;margin: 0 auto;">
-    <h1 style="text-align: center;font-weight: normal;color: #924992;">De ${user}</h1>
+    <h1 style="text-align: center;font-weight: normal;color: #924992;">Mensaje nuevo de un usuario</h1>
     <p>${message}.<br>
     Puedes ponerte en contacto con esta persona en el siguiente email ${from}
     </p>

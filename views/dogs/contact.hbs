@@ -10,10 +10,9 @@
     <div class="column2 padding form-container">
 
       <form action="/dogs/{{dog.id}}/contact" method="post">
-        <label for="user">De</label>
-        <input type="text" name="user" value="{{user.name}} {{user.surname}}">
+        <label for="email">Tu email</label>
+        <input type="text" name="email" value="{{user.email}} ">
         <br>
-
         <label for="center-name">Para</label>
         <input type="text" name="center-name" value="{{dog.center.name}}" disabled>
         <label for="subject">Asunto</label>
@@ -21,7 +20,7 @@
 
         <label for="message">Mensaje</label>
         <br>
-        <textarea type="textarea" name="message" placeholder="Hola, me llamo {{user.username}}, y estaría interesado en conocer a {{dog.name}} el día..."></textarea>
+        <textarea type="textarea" name="message" placeholder="Hola, me llamo {{user.name}}, y estaría interesado en conocer a {{dog.name}} el día..."></textarea>
         <br>
         <button type="submit">Enviar</button>
       </form>

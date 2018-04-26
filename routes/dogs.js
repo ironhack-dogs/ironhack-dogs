@@ -123,14 +123,14 @@ router.get("/:id/contact", (req, res, next) => {
 });
 
 router.post("/:id/contact", (req, res, next) => {
-  const { subject, message, user } = req.body;
-  console.log(user);
-  const user_email = req.user.email;
+  const { subject, message, email } = req.body;
+  const user_email = email;
+  console.log(user_email)
   Dog.findById(req.params.id)
     .populate("center")
     .then(dog => {
       const center_email = JSON.stringify(dog.center.email);
-      sendDateMail(center_email, user_email, subject, message, user);
+      sendDateMail(center_email, user_email, subject, message);
       res.redirect(`/dogs/${req.params.id}`);
     });
 });
