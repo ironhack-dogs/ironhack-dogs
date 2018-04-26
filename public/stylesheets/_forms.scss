@@ -60,3 +60,23 @@
   }
 }
 
+.menu {
+  form {
+    input {width: 90px;
+      padding: 5px;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+      font-size: 12pt;
+      border-radius: 30px;
+    }
+  }
+  button {
+    color: white;
+    background-color: $accent;
+  }
+
+  select{
+    width: 100px; 
+  }
+}
