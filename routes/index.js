@@ -4,22 +4,28 @@ const User = require("../models/User");
 const Dog = require("../models/Dog");
 const Request = require("../models/Request");
 const moment = require("moment");
-moment.locale('es');
+moment.locale("es");
 /* GET home page */
 router.get("/", (req, res, next) => {
-
-   Dog.count().exec(function (err, count) {
-        var random = Math.floor(Math.random() * count)
-        Dog.findOne().skip(random).exec()
-      .then(dogs => 
-        
-        res.render("index", { user: req.user, title: "Madrid Adopta", dogs, dogAge:moment(dogs.birthday).fromNow(true) })
+  Dog.count().exec(function(err, count) {
+    var random = Math.floor(Math.random() * count);
+    Dog.findOne()
+      .skip(random)
+      .exec()
+      .then(dogs =>
+        res.render("index", {
+          user: req.user,
+          title: "Madrid Adopta",
+          dogs,
+          dogAge: moment(dogs.birthday).fromNow(true)
+        })
       );
-    }
-  );
+  });
 });
 
-router.get("/become-admin", (req, res, next) => res.render("become-admin", req.user));
+router.get("/become-admin", (req, res, next) =>
+  res.render("become-admin", req.user)
+);
 
 router.post("/become-admin", (req, res, next) => {
   let { user, subject, message } = req.body;
@@ -38,7 +44,7 @@ router.post("/become-admin", (req, res, next) => {
             message:
               "Enhorabuena, tú solicitud está en proceso de revisión, cuando todo esté listo te enviaremos un email para dar de alta tu centro"
           };
-          res.render("become-admin", {user:req.user, success });
+          res.render("become-admin", { user: req.user, success });
         });
       }
     })
