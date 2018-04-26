@@ -7,14 +7,15 @@
 <section class="white-section padding56">
   <div class="container">
 {{#each requests}}
-<div class="card">
-  <p>{{{username}}}</p>
-  <p>{{subject}}</p>
-  <p>{{message}}</p>
-  <p>{{status}}</p>
+<div>
+  <p><strong>De:</strong> {{user.0.name}} <strong>Email</strong> {{user.0.email}}</p>
+  <p><strong>Asunto:</strong> {{subject}}</p>
+  <p><strong>Mensaje:</strong> {{message}}</p>
+  <p><strong>Fecha de la solicitud: </strong>{{created}}</p>
+  <p><strong>Estado de la solicitud: </strong> {{status}}</p>
 
-  <a href="admin/{{this.id}}/accept" class="megabutton color-success">Aceptar solicitud</a>
-  <a href="admin/{{this.id}}/deny" class="megabutton color-danger">Rechazar solicitud</a>
+  <a href="admin/{{this.id}}/accept"><button class="megabutton color-success">Aceptar solicitud</button></a>
+  <a href="admin/{{this.id}}/deny"><button class="megabutton color-danger">Rechazar solicitud</button></a>
 </div>
 {{/each}}
 </div>

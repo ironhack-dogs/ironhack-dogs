@@ -5,11 +5,15 @@ const Request = require("../models/Request");
 const isSuperAdmin = require("../middleware/isSuperadmin");
 const sendWelcomeMail = require("../mail/sendWelcomeMail");
 const sendDenyMail = require("../mail/sendDenyMail");
+const moment = require("moment")
 
 router.get("/", isSuperAdmin(), (req, res, next) => {
   Request.find()
-    .populate("user")
+    .populate("user",["name", "email"])
     .then(requests => {
+      requests.forEach(r => {
+        r.created = moment(r.created_at).format('DD MMMM YYYY, h:mm:ss');
+      })
       res.render("admin/index", { user: req.user, requests });
     })
     .catch(e => next(e));
