@@ -22,7 +22,7 @@ const prueba = (dog) => {
       dog.picture_url = data.message;
       dog.name = dogNames.allRandom();
       dog.birthday = moment(momentRandom("2018-02-25", "2014-12-25")).format('YYYY MM DD')
-      dog.center = "5addb2588cc03f34689efd87";
+      dog.center = "5ae1a262f98bf24239af973f";
       dog.gender = genders[Math.round(Math.random())];
       dog.size = sizes[Math.floor(Math.random() * 3)];
       dog.color = colors[Math.floor(Math.random() * 5)];
@@ -39,7 +39,7 @@ dog_data.forEach(dog => {
 });
 Promise.all(promiseArray)
   .then(() => {
-    mongoose.connect(dbURL).then(() => {
+    mongoose.connect("mongodb://Madridadopta:1234@ds014808.mlab.com:14808/madrid-adopta").then(() => {
       Dog.collection.drop();
       Dog.create(dog_data)
         .then(dog => {

@@ -4,7 +4,7 @@ const User = require("../../models/User");
 const user_data = require("./user_data");
 const dbURL = process.env.DBURL;
 
-mongoose.connect(dbURL).then (() => {
+mongoose.connect("mongodb://Madridadopta:1234@ds014808.mlab.com:14808/madrid-adopta").then (() => {
   User.collection.drop();
   
   User.create(user_data)
