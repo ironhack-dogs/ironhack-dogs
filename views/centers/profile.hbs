@@ -2,6 +2,7 @@
     var center = {{{centerData.location}}};
 </script>
 
+<h1>{{adminVar}}</h1>
 
 <section style="background-image:url('{{centerData.banner_url}}')" class="center-small-banner">
   <div class="center-title">
@@ -27,8 +28,9 @@
     <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
     <a href="/dogs/{{this._id}}">{{this.name}} </a> 
     <p>{{this.breed}}<br>{{this.gender}} de {{this.relativeDate}}</p>
+    {{#if this.isAdmin}}
     <a href="/dogs/edit/{{this._id}}"><span class="btn btn-primary">Editar</span></a> <br>
-    
+    {{/if}}
     <div class="social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
   </div>
   {{/each}}
