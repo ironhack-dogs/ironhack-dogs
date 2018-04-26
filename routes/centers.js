@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Center = require("../models/Center");
 const Dog = require("../models/Dog");
+const User = require("../models/User");
 const isAdmin = require("../middleware/isAdmin");
 const moment = require("moment");
 const uploadCloud = require("../config/cloudinary.js");
@@ -13,6 +14,20 @@ router.get("/", (req, res, next) => {
   });
 });
 
+// CRUD Create Center
+router.get("/new", (req, res, next) => {
+  req.user
+    ? User.findById(req.user.id)
+        .then(user => {
+          user.isAdmin == true
+            ? res.render("centers/new", { user: req.user })
+            : res.redirect("/no-permission");
+        })
+        .catch(e => next(e))
+    : res.redirect("/no-permission");
+});
+
+//List one center
 router.get("/:id", (req, res, next) => {
   Center.findById(req.params.id).then(centerData => {
     Dog.find({ center: centerData._id }).then(dogData => {
