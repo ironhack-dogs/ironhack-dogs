@@ -1,22 +1,20 @@
 <section class="dogs-banner">
   <div class="dogs-title">
     Mascotas que te quieren conocer.
-
   </div>
-</section>
-
-<div class="menu">
-
-  <form>
-
-    <label for="breed">Sexo:</label>
+  
+  <div class="filter-menu">
+   <div class="filter-block">
+   <label for="breed">Sexo</label>
     <select type="select" class="form-control" id="filter-gender" name="breed" aria-describedby="size">
       <option>Ambos</option>
       <option>Macho</option>
       <option>Hembra</option>
     </select>
+  </div>
 
-    <label for="breed">Raza:</label>
+  <div class="filter-block">
+    <label for="breed">Raza</label>
     <select type="select" class="form-control" id="filter-breed" name="breed" aria-describedby="size">
       <option>Todas</option>
       <option>Bulldog</option>
@@ -26,20 +24,26 @@
       <option>Mestizo</option>
       <option>Pastor Alemán</option>
     </select>
+  </div>
 
 
 
-    <label for="size">Tamaño:</label>
+    <div class="filter-block">
+    <label for="size">Tamaño</label>
     <select type="select" class="form-control" id="filter-size" name="filter-size" aria-describedby="size">
       <option>Todos</option>
       <option>Pequeño</option>
       <option>Mediano</option>
       <option>Grande</option>
     </select>
+    </div>
 
     
 
 </div>
+</section>
+
+
 {{relativeDate}}
 <div class="container padding56">
   {{#each dogs}}

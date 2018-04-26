@@ -1,6 +1,13 @@
-<div class="container-fluid">
-  <div class="col-md-3">
-    <form action="/dogs/new" method="POST" enctype="multipart/form-data">
+<section class="dogs-banner">
+  <div class="dogs-title">
+   Publicación de mascotas
+  </div>
+</section>
+
+<section class="white-section padding56">
+<div class="container">
+<div class="column2 padding form-container">
+     <form action="/dogs/new" method="POST" enctype="multipart/form-data">
 
       <div class="form-group">
         <label for="dogName">Nombre del perro:</label>
@@ -80,12 +87,14 @@
       </div>
 
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="megabutton">Guardar</button>
     <input style="visibility:hidden" type="text" name="center" value="{{centerData._id}}">
     </form>
+
+
+</div>
+
+</div>
+</section>  
   </div>
-
-
-  Center name: {{centerData.name}} Center ID: Admin ID: {{centerData.admin_id}}
-
 </div>

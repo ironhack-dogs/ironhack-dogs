@@ -2,81 +2,89 @@
   <div class="user-title">
     ¡Hola, {{user.username}}!
   </div>
+  <div style="font-size: 9pt; color:white; margin-top: 16px">Usuario desde el {{since}} </div>
 </section>
 
-<section class="white-section">
-  <div class="container padding56">
+<div class="menu">
+  Tus favoritos
+</div>
 
-    <div class="column2">
-      Eres usuario desde el {{since}} {{#if center}}
-      <h3>Actualmente, gestionas el siguiente centro:</h3>
-      <table>
-        <tr>
-          <td>
-            <a href="/centers/{{center._id}}">{{center.name}}</a>
-          </td>
-          <td>
-            <span class="btn-primary color-success">
-              <a href="/dogs/new">
-                <i class="far fa-plus-square"></i>
+<section class="grey-section padding24">
+  <div class="container">
+    {{#each dogs}}
 
-                Añadir mascota</a>
-            </span>
-            <span class="btn-primary">
-              <a href="/centers/{{center._id}}/edit">
-                <i class="far fa-edit"></i>
+    <div class="card">
+      <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
+      <a href="/dogs/{{this._id}}">{{this.name}} </a>
+      <p>{{this.gender}} de {{this.relativeDate}}</p>
 
-                Editar</a>
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <span class="btn-primary color-danger">
-              <a href="/centers/{{center._id}}/delete">
-                <i class="far fa-trash-alt"></i>
+      <div class="social">
+        <a href="#">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="whatsapp://send?text=¡Conoce a {{this.name}} en Madrid Adopta! http://www.madridadopta/dogs/{{this._id}}" data-action="share/whatsapp/share">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 
-                Eliminar Centro</a>
-            </span>
-          </td>
-        </tr>
-      </table>
+</section>
+
+{{#if user.isAdmin}}
+<section class="white-section padding24">
+  <div class="container">
+    <div class="dogs-title" id="favs">Gestiona tu centro</div>
+
+    <div class="column1 myCenter">
+        
+        <div>
+        <a href="/centers/{{center._id}}">{{center.name}}</a>
+        </div>
+      </div>
+
+      <div class="megabutton color-primary">
+          <a href="/centers/{{center._id}}/edit">
+            <i class="far fa-edit"></i> Editar datos del centro
+          </a>       
+      </div>
+
+      <div class="megabutton color-success">
+         <a href="/dogs/new">
+           <i class="far fa-plus-square"></i> Añadir mascota
+        </a>
+      </div>
+
+      <div class="megabutton color-danger">
+        
+          <a href="/centers/{{center._id}}/delete">
+            <i class="far fa-trash-alt"></i> Dar de baja este centro</a>
+        
+      </div>
+
     </div>
 
 
-    {{/if}} {{#if user.isAdmin}}
-    <a class="btn-primary color-success" href="/my-profile/create-center">
-      <i class="far fa-plus-square"></i>
-      Registrar un centro</a>
+    {{else}}
+    <section class="ad-section ">
+      <div class="overlay">
+        <div class="padding56">
+          <span class="hero-title">¿Quieres añadir tu centro a Madrid Adopta?</span>
+        </div>
+        <div>
+          <a class="btn-primary" href="/become-admin">Envíanos tu solicitud</a>
+        </div>
+      </div>
+    </section>
 
     {{/if}}
 
 
-    <div class="container padding56">
-      <div class="dogs-title" id="favs">Mis perros favoritos</div>
 
-      {{#each dogs}}
-
-      <div class="card">
-        <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
-        <a href="/dogs/{{this._id}}">{{this.name}} </a>
-        <p>{{this.gender}} de {{this.relativeDate}}</p>
-
-        <div class="social">
-          <a href="#">
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="#">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="whatsapp://send?text=¡Conoce a {{this.name}} en Madrid Adopta! http://www.madridadopta/dogs/{{this._id}}" data-action="share/whatsapp/share">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-      {{/each}}
-    </div>
   </div>
   </div>
 </section>

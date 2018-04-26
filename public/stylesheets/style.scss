@@ -5,6 +5,7 @@
 @import "centers";
 @import "forms";
 @import "user";
+@import "animation";
 
 body {
   margin: 0;
@@ -124,14 +125,24 @@ td:nth-child(odd) {
  
 }
 
+.back-polaroid {
+  margin-top: 3px;
+  background-color: white;
+  height: 400px;
+  width: 320px;
+  border: 6px solid white;
+  border-radius: 0px 4px 0 4px;
+  box-shadow: grey 1px 2px 10px;
+  animation: float 4s ease-in-out infinite;
+}
+
 .img-polaroid {
+  position: relative;
+  top: -20px;
   margin-top: 30px;
   background-size: cover;
-  height: 430px;
-  width: 430px;
-  border: 6 px solid white;
-  box-shadow: grey 0 0 5px;
- 
+  height: 300px;
+  width: 300px; 
 }
 
 .img-round-profile {
