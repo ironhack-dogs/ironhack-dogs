@@ -2,8 +2,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const Center = require("../../models/Center");
 const center_data = require("./center_data");
-
-mongoose.connect(process.env.DBURL).then (() => {
+mongoose.connect(dbURL).then (() => {
   Center.collection.drop();
   
   Center.create(center_data)
