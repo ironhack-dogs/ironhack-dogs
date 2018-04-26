@@ -4,6 +4,7 @@ const Center = require("../models/Center");
 const Dog = require("../models/Dog");
 const isAdmin = require("../middleware/isAdmin");
 const moment = require("moment");
+const uploadCloud = require("../config/cloudinary.js");
 
 // List all centers
 router.get("/", (req, res, next) => {
@@ -37,9 +38,10 @@ router.get("/:id/edit", isAdmin(), (req, res, next) => {
   res.render("centers/edit", { user: req.user, center: req.center });
 });
 
-router.post("/:id/edit", (req, res, next) => {
+router.post("/:id/edit", uploadCloud.single("banner"), (req, res, next) => {
   const { name, phone, email, website_url, description } = req.body;
-  const update = { name, phone, email, website_url, description };
+  const banner_url = req.file.url;
+  const update = { name, phone, email, website_url, description, banner_url };
   Center.findByIdAndUpdate(req.params.id, update)
     .then(() => res.redirect(`/centers/${req.params.id}`))
     .catch(e => next(e));
