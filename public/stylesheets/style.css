@@ -101,16 +101,13 @@ section {
 .menu {
   box-sizing: border-box;
   text-transform: uppercase;
-  padding: 20px;
   width: 100%;
   height: 60px;
   background-color: #FFAD02;
   z-index: 10;
   color: white;
   font-weight: 700;
-  display: flex;
-  justify-content: space-around;
-  letter-spacing: 2pt; }
+  display: flex; }
   .menu a {
     text-decoration: none;
     color: white; }
@@ -273,20 +270,6 @@ section {
   margin: 0 auto;
   height: 100%;
   vertical-align: middle; }
-
-.menu {
-  box-sizing: border-box;
-  text-transform: uppercase;
-  padding: 20px;
-  width: 100%;
-  height: 60px;
-  background-color: #FFAD02;
-  z-index: 10;
-  color: white;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-around;
-  letter-spacing: 2pt; }
 
 .column2 {
   box-sizing: border-box;
@@ -462,6 +445,22 @@ td:nth-child(odd) {
   background-color: #84e684;
   color: white; }
 
+.menu form input {
+  width: 90px;
+  padding: 5px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-size: 12pt;
+  border-radius: 30px; }
+
+.menu button {
+  color: white;
+  background-color: #924992; }
+
+.menu select {
+  width: 100px; }
+
 .user-small-banner {
   box-sizing: border-box;
   background-image: url("https://res.cloudinary.com/abdaio/image/upload/c_scale,w_1965/v1524605336/sam-manns-399879-unsplash.jpg");
@@ -575,7 +574,7 @@ td:nth-child(odd) {
   background-size: cover;
   height: 430px;
   width: 430px;
-  border: 6px solid white;
+  border: 6 px solid white;
   box-shadow: grey 0 0 5px; }
 
 .img-round-profile {

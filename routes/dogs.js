@@ -94,6 +94,7 @@ router.get("/:id", (req, res, next) => {
   Dog.findById(req.params.id)
     .populate("center")
     .then(dogData => {
+      console.log(dogData);
       moment.locale("es");
       dogData.relativeDate = moment(dogData.birthday).fromNow(true);
       res.render("dogs/profile", { user: req.user, dogData });
