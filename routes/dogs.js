@@ -6,6 +6,8 @@ const Center = require("../models/Center");
 const User = require("../models/User");
 const moment = require("moment");
 const sendDateMail = require("../mail/sendDateMail");
+const isAdmin = require("../middleware/isAdmin");
+
 
 // Create new dog
 router.get("/new", (req, res, next) => {
@@ -94,11 +96,18 @@ router.get("/:id", (req, res, next) => {
   Dog.findById(req.params.id)
     .populate("center")
     .then(dogData => {
-      console.log(dogData);
       moment.locale("es");
       dogData.relativeDate = moment(dogData.birthday).fromNow(true);
       res.render("dogs/profile", { user: req.user, dogData });
     });
+});
+
+// Deletion 
+
+router.get("/:id/delete", (req, res, next) => {
+  Dog.findByIdAndRemove(req.params.id)
+  .then(() => res.redirect("/dogs/"))
+  .catch(e => next(e));
 });
 
 router.post("/search", (req, res, next) => {

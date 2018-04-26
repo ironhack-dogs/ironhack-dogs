@@ -92,14 +92,16 @@
       </div>
 
 
-      <button type="submit" class="btn btn-success">Guardas cambios</button>
+      <button type="submit" class="btn btn-success">Guardar cambios</button>
       <input style="visibility:hidden" type="text" name="center" value="{{centerData._id}}">
 
     </form>
 
   </div>
-  <div class="column2 padding form-container">
-      <button type="submit" class=" color-danger">Eliminar esta mascota</button>
+  <div class="column3">
+      <div class="padding24">
+      <a href="/dogs/{{dogData._id}}/delete"><button type="submit" class="megabutton color-danger"><i class="far fa-trash-alt"></i> Eliminar esta mascota</button></a>
+      </div>
   </div>
 </div>
 

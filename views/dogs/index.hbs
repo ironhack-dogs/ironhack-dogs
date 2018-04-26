@@ -6,38 +6,48 @@
 </section>
 
 <div class="menu">
-  <form action="/dogs/search" method="POST">
+
+  <form>
+
+    <label for="breed">Sexo:</label>
+    <select type="select" class="form-control" id="filter-gender" name="breed" aria-describedby="size">
+      <option>Ambos</option>
+      <option>Macho</option>
+      <option>Hembra</option>
+    </select>
+
     <label for="breed">Raza:</label>
-    <input type="text" class="form-control" id="breed" name="breed" aria-describedby="Breed">
+    <select type="select" class="form-control" id="filter-breed" name="breed" aria-describedby="size">
+      <option>Todas</option>
+      <option>Bulldog</option>
+      <option>Corgi</option>
+      <option>Galgo</option>
+      <option>Labrador</option>
+      <option>Mestizo</option>
+      <option>Pastor Alemán</option>
+    </select>
 
-
-    <label for="gender">Sexo:</label>
-
-    <input class="form-check-input" type="radio" name="gender" id="gender" value="Macho">
-    <label class="form-check-label" for="inlineRadio1">Macho</label>
-    <input class="form-check-input" type="radio" name="gender" id="gender" value="Hembra">
-    <label class="form-check-label" for="gender">Hembra</label>
 
 
     <label for="size">Tamaño:</label>
-    <select type="select" class="form-control" id="size" name="size" aria-describedby="size">
+    <select type="select" class="form-control" id="filter-size" name="filter-size" aria-describedby="size">
+      <option>Todos</option>
       <option>Pequeño</option>
       <option>Mediano</option>
       <option>Grande</option>
     </select>
 
-    <button type="submit" class="">
-      <i class="fas fa-search"></i> Buscar</button>
+    
 
 </div>
 {{relativeDate}}
 <div class="container padding56">
   {{#each dogs}}
 
-  <div class="card">
+  <div data-gender="{{this.gender}}" data-breed="{{this.breed}}" data-size={{this.size}} class="card" id="dogCard">
     <div class="picture" style="background-image:url('{{{this.picture_url}}}')"></div>
     <a href="/dogs/{{this._id}}">{{this.name}} </a> 
-    <p>{{this.gender}} de {{this.relativeDate}}</p>
+    <p>{{this.breed}}<br>{{this.gender}} de {{this.relativeDate}}</p>
   
     <div class="social"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="whatsapp://send?text=¡Conoce a {{this.name}} en Madrid Adopta! http://www.madridadopta/dogs/{{this._id}}" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a></div>
   </div>
@@ -65,3 +75,53 @@
 </div>
 
 </div>
+
+<script>
+  $(document).ready(function(){
+    
+    var genderVar = $("select#filter-gender").val();
+    var sizeVar = $("select#filter-size").val();
+    var breedVar = $("select#filter-breed").val();
+
+    
+    // Gender filter
+    $("select#filter-gender").on('change', function(){
+      genderVar = $("select#filter-gender").val();
+      if (genderVar !== 'Ambos'){
+       $(".card[data-gender!="+genderVar+"]").hide();
+        $(".card[data-gender="+genderVar+"]").show();
+      }
+      else{
+         $(".card[data-gender='Macho']").show();
+         $(".card[data-gender='Hembra']").show();
+      }
+    });
+    
+    // Size filter
+    $("select#filter-size").on('change', function(){
+      sizeVar = $("select#filter-size").val();
+      if (sizeVar !== 'Todos'){
+       $(".card[data-size!="+sizeVar+"]").hide();
+        $(".card[data-size="+sizeVar+"]").show();
+      }
+      else{
+         $(".card[data-size!='']").show();
+      }
+    });
+      // Breed filter
+      $("select#filter-breed").on('change', function(){
+      breedVar = $("select#filter-breed").val();
+      if (breedVar !== 'Todas'){
+        $(".card[data-breed!="+breedVar+"]").hide();
+        $(".card[data-breed="+breedVar+"]").show();
+      }
+      else{
+         $(".card[data-breed!='']").show();
+      }
+      
+     
+    
+    });
+      
+  })
+</script>
